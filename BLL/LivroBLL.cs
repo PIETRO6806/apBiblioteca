@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using DAL;
-using DTO;
-namespace BLL
+using apBiblioteca_22132_22148.DAL;
+using apBiblioteca_22132_22148.DTO;
+
+namespace apBiblioteca_22132_22148.BLL
 {
     class LivroBLL
     {

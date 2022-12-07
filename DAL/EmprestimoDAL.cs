@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using DTO;
+using apBiblioteca_22132_22148.DTO;
 
 namespace apBiblioteca_22132_22148.DAL
 {
@@ -44,7 +44,7 @@ namespace apBiblioteca_22132_22148.DAL
             {
                 throw new Exception("Erro ao acessar emprestimo " + ex.Message);
             }
-        };
+        }
         public DataTable SelectEmprestimos()
         {
             {
@@ -66,8 +66,8 @@ namespace apBiblioteca_22132_22148.DAL
                     throw ex;
                 }
             }
-        };
-        public Livro SelectEmprestimoById(int idDesejado)
+        }
+        public Emprestimo SelectEmprestimoById(int idDesejado)
         {
             try
             {
@@ -75,7 +75,7 @@ namespace apBiblioteca_22132_22148.DAL
                         "dataDevolucaoPrevista, dataDevolucaoReal FROM bibEmprestimo" +
                         "WHERE idEmprestimo = @id";
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
-                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@id", idDesejado);
                 _conexao.Open();
                 SqlDataReader dr;
                 dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
@@ -86,8 +86,8 @@ namespace apBiblioteca_22132_22148.DAL
                     dr["idLivro"].ToString(),
                     dr["idLeitor"].ToString(),
                     dr["dataEmprestimo"].ToString());
-                    dr["dataDevolucaoPrevista"].ToString());
-                    dr["dataDevolucaoReal"].ToString());
+                    dr["dataDevolucaoPrevista"].ToString();
+                    dr["dataDevolucaoReal"].ToString();
 
                 }
                 _conexao.Close();

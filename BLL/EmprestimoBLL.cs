@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using DAL;
-using DTO;
-namespace BLL
+using apBiblioteca_22132_22148.DAL;
+using apBiblioteca_22132_22148.DTO;
+namespace apBiblioteca_22132_22148.BLL
 {
-    class LivroBLL
+    class EmprestimoBLL
     {
         public string banco, usuario, senha;
-        LivroDAL dal = null;
-        public LivroBLL(string banco, string usuario, string senha)
+        EmprestimoDAL dal = null;
+        public EmprestimoBLL(string banco, string usuario, string senha)
         {
             this.banco = banco;
             this.usuario = usuario;
@@ -35,7 +35,7 @@ namespace BLL
         {
             try
             {
-                dal = new DAL.LivroDAL(banco, usuario, senha);
+                dal = new DAL.EmprestimoDAL(banco, usuario, senha);
                 dal.InsertEmprestimo(emprestimo);
             }
             catch (Exception ex)
@@ -91,7 +91,7 @@ namespace BLL
                 throw ex;
             }
         }
-        public Emprestimo ListarEmprestimoPorCodigo(string codigo)
+        /*public Emprestimo ListarEmprestimoPorCodigo(string codigo)
         {
             try
             {
@@ -102,6 +102,6 @@ namespace BLL
             {
                 throw ex;
             }
-        }
+        }*/
     }
 }

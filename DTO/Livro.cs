@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace apBiblioteca_22132_22148
+namespace apBiblioteca_22132_22148.DTO
 {
     class Livro
     {

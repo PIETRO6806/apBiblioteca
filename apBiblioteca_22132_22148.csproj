@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\EmprestimoBLL.cs" />
+    <Compile Include="BLL\LeitorBLL.cs" />
+    <Compile Include="BLL\LivroBLL.cs" />
+    <Compile Include="DAL\EmprestimoDAL.cs" />
+    <Compile Include="DAL\LeitorDAL.cs" />
     <Compile Include="DAL\LivroDAL.cs" />
     <Compile Include="DTO\Emprestimo.cs" />
     <Compile Include="UI\Form1.cs">
@@ -80,8 +85,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BLL\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

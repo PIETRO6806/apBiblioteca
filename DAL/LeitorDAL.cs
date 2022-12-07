@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using DTO;
+using apBiblioteca_22132_22148.DTO;
 
 namespace apBiblioteca_22132_22148.DAL
 {
@@ -11,7 +11,7 @@ namespace apBiblioteca_22132_22148.DAL
         string _conexaoSQLServer = "";
         SqlConnection _conexao = null;
 
-        public LivroDAL(string banco, string usuario, string senha)
+        public LeitorDAL(string banco, string usuario, string senha)
         {
             _conexaoSQLServer =
                 $"Data Source=regulus.cotuca.unicamp.br; Initial Catalog={banco};" +
@@ -23,7 +23,7 @@ namespace apBiblioteca_22132_22148.DAL
             try
             {
                 var cmd = new SqlCommand("Select * from bibLivro", _conexao);
-                _conexaon.Open();
+                _conexao.Open();
                 var listaLivros = new List<Livro>();
                 var dr = cmd.ExecuteReader();
                 while (dr.Read())
@@ -42,7 +42,7 @@ namespace apBiblioteca_22132_22148.DAL
             {
                 throw new Exception("Erro ao acessar livro " + ex.Message);
             }
-        };
+        }
         public DataTable SelectLivros()
         {
             {
@@ -63,7 +63,7 @@ namespace apBiblioteca_22132_22148.DAL
                     throw ex;
                 }
             }
-        };
+        }
         public Livro SelectLivroById(int idDesejado)
         {
             try
@@ -71,7 +71,7 @@ namespace apBiblioteca_22132_22148.DAL
                 string sql = "SELECT idLivro, codigoLivro, tituloLivro, autorLivro " +
                 " FROM bibLivro WHERE idLivro = @id";
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
-                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@id", idDesejado);
                 _conexao.Open();
                 SqlDataReader dr;
                 dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
@@ -99,7 +99,7 @@ namespace apBiblioteca_22132_22148.DAL
                 string sql = " SELECT idLivro, codigoLivro, tituloLivro, autorLivro " +
                 " FROM bibLivro WHERE codigoLivro = @codigo";
                 var cmd = new SqlCommand(sql, _conexao);
-                cmd.Parameters.AddWithValue("@codigo", codigo);
+                cmd.Parameters.AddWithValue("@codigo", codigoDesejado);
                 _conexao.Open();
                 SqlDataReader dr;
                 dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
