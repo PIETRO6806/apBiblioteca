@@ -53,7 +53,7 @@ namespace apBiblioteca_22132_22148
             }
         }
 
-        public DateTime DevolucaoPrevista
+        public DateTime DataDevolucaoPrevista
         {
             get => dataDevolucaoPrevista;
             set
@@ -69,6 +69,18 @@ namespace apBiblioteca_22132_22148
             {
                 dataDevolucaoReal = value;
             }
+        }
+
+        public Emprestimo(int emprestimo, int livro, int leitor,
+                          DateTime data, DateTime dataDevolucaoPrevista,
+                          DateTime dataDevolucaoReal)
+        {
+            IdEmprestimo = emprestimo;
+            IdLivro = livro;
+            IdLeitor = leitor;
+            DataEmprestimo = data;
+            DataDevolucaoPrevista = dataDevolucaoPrevista;
+            DataDevolucaoReal = dataDevolucaoReal;
         }
     }
 }
