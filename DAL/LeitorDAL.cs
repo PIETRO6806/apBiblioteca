@@ -18,37 +18,38 @@ namespace apBiblioteca_22132_22148.DAL
                 $"User id={usuario}; Password={senha}";
             _conexao = new SqlConnection(_conexaoSQLServer);
         }
-        public List<Livro> SelectListLivros()
+        public List<Leitor> SelectListLeitores()
         {
             try
             {
-                var cmd = new SqlCommand("Select * from bibLivro", _conexao);
+                var cmd = new SqlCommand("Select * from bibLeitor", _conexao);
                 _conexao.Open();
-                var listaLivros = new List<Livro>();
+                var listaLeitores = new List<Leitor>();
                 var dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    var livro = new Livro((int)dr["idLivro"],
-                    dr["codigoLivro"] + "",
-                    dr["tituloLivro"] + "",
-                    dr["autorLivro"] + ""
+                    var leitor = new Leitor((int)dr["idLeitor"],
+                    dr["nomeLeitor"] + "",
+                    dr["telefoneLeitor"] + "",
+                    dr["emailLeitor"] + "",
+                    dr["enderecoLeitor"] + ""
                     );
-                    listaLivros.Add(livro);
+                    listaLeitores.Add(leitor);
                 }
                 _conexao.Close();
-                return listaLivros;
+                return listaLeitores;
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro ao acessar livro " + ex.Message);
+                throw new Exception("Erro ao acessar leitor " + ex.Message);
             }
         }
-        public DataTable SelectLivros()
+        public DataTable SelectLeitores()
         {
             {
                 try
                 {
-                    string sql = "SELECT idLivro,codigoLivro,tituloLivro,autorLivro FROM bibLivro";
+                    string sql = "SELECT idLeitor,nomeLeitor,telefoneLeitor,emailLeitor,enderecoLeitor FROM bibLeitor";
                     SqlCommand cmd = new SqlCommand(sql, _conexao);
                     _conexao.Open();
                     SqlDataAdapter da = new SqlDataAdapter();
@@ -64,40 +65,42 @@ namespace apBiblioteca_22132_22148.DAL
                 }
             }
         }
-        public Livro SelectLivroById(int idDesejado)
+        public Leitor SelectLeitorById(int idDesejado)
         {
             try
             {
-                string sql = "SELECT idLivro, codigoLivro, tituloLivro, autorLivro " +
-                " FROM bibLivro WHERE idLivro = @id";
+                string sql = "SELECT idLeitor,nomeLeitor,telefoneLeitor,emailLeitor,enderecoLeitor " +
+                " FROM bibLeitor WHERE idLeitor = @id";
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
                 cmd.Parameters.AddWithValue("@id", idDesejado);
                 _conexao.Open();
                 SqlDataReader dr;
                 dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
-                Livro livro = null;
+                Leitor leitor = null;
                 if (dr.Read())
                 {
-                    livro = new Livro(Convert.ToInt32(dr["idLivro"]),
-                    dr["codigoLivro"].ToString(),
-                    dr["tituloLivro"].ToString(),
-                    dr["autoroLIvro"].ToString());
+                    leitor = new Leitor(Convert.ToInt32(dr["idLeitor"]),
+                    dr["nomeLeitor"].ToString(),
+                    dr["telefoneLeitor"].ToString(),
+                    dr["emailLeitor"].ToString(),
+                    dr["enderecoLeitor"].ToString()
+                    );
 
                 }
                 _conexao.Close();
-                return livro;
+                return leitor;
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-        public Livro SelectLivroByCodigo(string codigoDesejado)
+        /*public Leitor SelectLeitorByCodigo(string codigoDesejado)
         {
             try
             {
-                string sql = " SELECT idLivro, codigoLivro, tituloLivro, autorLivro " +
-                " FROM bibLivro WHERE codigoLivro = @codigo";
+                string sql = " SELECT idLeitor,nomeLeitor,telefoneLeitor,emailLeitor,enderecoLeitor " +
+                " FROM bibLeitor WHERE codigoLivro = @codigo";
                 var cmd = new SqlCommand(sql, _conexao);
                 cmd.Parameters.AddWithValue("@codigo", codigoDesejado);
                 _conexao.Open();
@@ -118,17 +121,20 @@ namespace apBiblioteca_22132_22148.DAL
                 throw ex;
             }
         }
-        public void InsertLivro(Livro qualLivro)
+        */
+        public void InsertLeitor(Leitor qualLeitor)
         {
             try
             {
-                string sql = "INSERT INTO bibLivro " +
-                " (codigoLivro, tituloLivro, autorLivro) " +
-                " VALUES (@codigo,@titulo, @autor) ";
+                string sql = "INSERT INTO bibLeitor " +
+                " (idLeitor,nomeLeitor, telefoneLeitor, emailLeitor, enderecoLeitor) " +
+                " VALUES (@id,@nome,@telefone, @email, @endereco) ";
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
-                cmd.Parameters.AddWithValue("@codigo", qualLivro.CodigoLivro);
-                cmd.Parameters.AddWithValue("@titulo", qualLivro.TituloLivro);
-                cmd.Parameters.AddWithValue("@autor", qualLivro.AutorLivro);
+                cmd.Parameters.AddWithValue("@id", qualLeitor.IdLeitor);
+                cmd.Parameters.AddWithValue("@nome", qualLeitor.NomeLeitor);
+                cmd.Parameters.AddWithValue("@telefone", qualLeitor.TelefoneLeitor);
+                cmd.Parameters.AddWithValue("@email", qualLeitor.EmailLeitor);
+                cmd.Parameters.AddWithValue("@endereco", qualLeitor.EnderecoLeitor);
                 _conexao.Open();
                 cmd.ExecuteNonQuery();
             }
@@ -141,13 +147,13 @@ namespace apBiblioteca_22132_22148.DAL
                 _conexao.Close();
             }
         }
-        public void DeleteLivro(Livro qualLivro)
+        public void DeleteLeitor(Leitor qualLeitor)
         {
             try
             {
-                String sql = "DELETE FROM bibLivro WHERE idLIvro = @idLivro ";
+                String sql = "DELETE FROM bibLeitor WHERE idLeitor = @idLeitor ";
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
-                cmd.Parameters.AddWithValue("@idLivro", qualLivro.IdLivro);
+                cmd.Parameters.AddWithValue("@idLivro", qualLeitor.IdLeitor);
                 _conexao.Open();
                 cmd.ExecuteNonQuery();
             }
@@ -160,19 +166,20 @@ namespace apBiblioteca_22132_22148.DAL
                 _conexao.Close();
             }
         }
-        public void UpdateLivro(Livro qualLivro)
+        public void UpdateLeitor(Leitor qualLeitor)
         {
             try
             {
-                string sql = "UPDATE bibLivro " +
-                " SET tituloLivro= @titulo, codigoLivro=@codigo," +
-                " autorLivro=@autor " +
-                " WHERE idLivro = @idLivro ";
+                string sql = "UPDATE bibLeitor " +
+                " SET nomeLeitor= @nome, telefoneLeitor=@tel," +
+                " emailLeitor=@email, enderecoLeitor=@ender " +
+                " WHERE idLivro = @id ";
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
-                cmd.Parameters.AddWithValue("@idLivro", qualLivro.IdLivro);
-                cmd.Parameters.AddWithValue("@codigo", qualLivro.CodigoLivro);
-                cmd.Parameters.AddWithValue("@titulo", qualLivro.TituloLivro);
-                cmd.Parameters.AddWithValue("@autor", qualLivro.AutorLivro);
+                cmd.Parameters.AddWithValue("@id", qualLeitor.IdLeitor);
+                cmd.Parameters.AddWithValue("@nome", qualLeitor.NomeLeitor);
+                cmd.Parameters.AddWithValue("@tel", qualLeitor.TelefoneLeitor);
+                cmd.Parameters.AddWithValue("@email", qualLeitor.EmailLeitor);
+                cmd.Parameters.AddWithValue("@ender", qualLeitor.EnderecoLeitor);
                 _conexao.Open();
                 cmd.ExecuteNonQuery();
             }

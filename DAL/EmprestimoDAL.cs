@@ -29,11 +29,11 @@ namespace apBiblioteca_22132_22148.DAL
                 while (dr.Read())
                 {
                     var emprestimo = new Emprestimo((int)dr["idEmprestimo"],
-                    dr["idLivro"] + "",
-                    dr["idLeitor"] + "",
-                    dr["dataEmprestimo"] + "",
-                    dr["dataDevolucaoPrevista"] = "",
-                    dr["dataDevolucaoReal"] = ""
+                    (int)dr["idLivro"]/* + ""*/,
+                    (int)dr["idLeitor"] /*+ ""*/,
+                    (DateTime)dr["dataEmprestimo"] /*+ ""*/,
+                    (DateTime)dr["dataDevolucaoPrevista"] /*= ""*/,
+                    (DateTime)dr["dataDevolucaoReal"] /*= ""*/
                     );
                     listaEmprestimos.Add(emprestimo);
                 }
@@ -83,11 +83,11 @@ namespace apBiblioteca_22132_22148.DAL
                 if (dr.Read())
                 {
                     emprestimo = new Emprestimo(Convert.ToInt32(dr["idEmprestimo"]),
-                    dr["idLivro"].ToString(),
-                    dr["idLeitor"].ToString(),
-                    dr["dataEmprestimo"].ToString());
-                    dr["dataDevolucaoPrevista"].ToString();
-                    dr["dataDevolucaoReal"].ToString();
+                    Convert.ToInt32(dr["idLivro"].ToString()),
+                    Convert.ToInt32(dr["idLeitor"].ToString()),
+                    Convert.ToDateTime(dr["dataEmprestimo"].ToString()),
+                    Convert.ToDateTime(dr["dataDevolucaoPrevista"].ToString()),
+                    Convert.ToDateTime(dr["dataDevolucaoReal"].ToString()));
 
                 }
                 _conexao.Close();

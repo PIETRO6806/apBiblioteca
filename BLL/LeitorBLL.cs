@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using DAL;
-using DTO;
-namespace BLL
+using apBiblioteca_22132_22148.DAL;
+using apBiblioteca_22132_22148.DTO;
+namespace apBiblioteca_22132_22148.BLL
 {
     class LeitorBLL
     {
         public string banco, usuario, senha;
-        LivroDAL dal = null;
+        LeitorDAL dal = null;
         public LeitorBLL(string banco, string usuario, string senha)
         {
             this.banco = banco;
@@ -21,8 +21,8 @@ namespace BLL
                 DataTable tb = new DataTable();
                 try
                 {
-                    dal = new DAL.LeitorDAL(banco, usuario, senha);
-                    tb = dal.SelectLeitor();
+                    dal = new LeitorDAL(banco, usuario, senha);
+                    tb = dal.SelectLeitores();
                 }
                 catch (Exception ex)
                 {
@@ -35,7 +35,7 @@ namespace BLL
         {
             try
             {
-                dal = new DAL.LeitorDAL(banco, usuario, senha);
+                dal = new LeitorDAL(banco, usuario, senha);
                 dal.InsertLeitor(leitor);
             }
             catch (Exception ex)
@@ -47,7 +47,7 @@ namespace BLL
         {
             try
             {
-                dal = new DAL.LeitorDAL(banco, usuario, senha);
+                dal = new LeitorDAL(banco, usuario, senha);
                 dal.UpdateLeitor(leitor);
             }
             catch (Exception ex)
@@ -59,7 +59,7 @@ namespace BLL
         {
             try
             {
-                dal = new DAL.LeitorDAL(banco, usuario, senha);
+                dal = new LeitorDAL(banco, usuario, senha);
                 dal.DeleteLeitor(leitor);
             }
             catch (Exception ex)
@@ -71,7 +71,7 @@ namespace BLL
         {
             try
             {
-                dal = new DAL.LeitorDAL(banco, usuario, senha);
+                dal = new LeitorDAL(banco, usuario, senha);
                 return dal.SelectListLeitores();
             }
             catch (Exception ex)
@@ -83,7 +83,7 @@ namespace BLL
         {
             try
             {
-                dal = new DAL.LeitorDAL(banco, usuario, senha);
+                dal = new LeitorDAL(banco, usuario, senha);
                 return dal.SelectLeitorByID(id);
             }
             catch (Exception ex)
@@ -91,7 +91,7 @@ namespace BLL
                 throw ex;
             }
         }
-        public Leitor ListarLeitorPorCodigo(string codigo)
+        /*public Leitor ListarLeitorPorCodigo(string codigo)
         {
             try
             {
@@ -102,6 +102,6 @@ namespace BLL
             {
                 throw ex;
             }
-        }
+        }*/
     }
 }
