@@ -85,7 +85,7 @@ namespace apBiblioteca_22132_22148.BLL
             try
             {
                 dal = new DAL.LivroDAL(banco, usuario, senha);
-                return dal.SelectLivroByID(id);
+                return dal.SelectLivroById(id);
             }
             catch (Exception ex)
             {

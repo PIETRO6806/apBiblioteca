@@ -84,7 +84,7 @@ namespace apBiblioteca_22132_22148.BLL
             try
             {
                 dal = new DAL.EmprestimoDAL(banco, usuario, senha);
-                return dal.SelectEmprestimoByID(id);
+                return dal.SelectEmprestimoById(id);
             }
             catch (Exception ex)
             {

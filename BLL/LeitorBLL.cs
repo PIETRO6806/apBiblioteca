@@ -84,7 +84,7 @@ namespace apBiblioteca_22132_22148.BLL
             try
             {
                 dal = new LeitorDAL(banco, usuario, senha);
-                return dal.SelectLeitorByID(id);
+                return dal.SelectLeitorById(id);
             }
             catch (Exception ex)
             {
