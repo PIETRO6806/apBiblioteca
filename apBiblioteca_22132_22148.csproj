@@ -57,6 +57,24 @@
     <Compile Include="DTO\Livro.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\FrmLeitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmLeitor.Designer.cs">
+      <DependentUpon>FrmLeitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmLivro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmLivro.Designer.cs">
+      <DependentUpon>FrmLivro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmOperacoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmOperacoes.Designer.cs">
+      <DependentUpon>FrmOperacoes.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +90,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\FrmLeitor.resx">
+      <DependentUpon>FrmLeitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmLivro.resx">
+      <DependentUpon>FrmLivro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>

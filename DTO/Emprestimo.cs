@@ -40,7 +40,7 @@ namespace apBiblioteca_22132_22148.DTO
             {
                 if (value < 0)
                     throw new Exception("Id negativo é inválido!");
-                idLivro = value;
+                idLeitor = value;
             }
         }
 

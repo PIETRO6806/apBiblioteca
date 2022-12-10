@@ -153,7 +153,7 @@ namespace apBiblioteca_22132_22148.DAL
         {
             try
             {
-                String sql = "DELETE FROM bibEmprestimo WHERE idEmprestimo = @idEmprestimo ";
+                string sql = "DELETE FROM bibEmprestimo WHERE idEmprestimo = @idEmprestimo ";
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
                 cmd.Parameters.AddWithValue("@idEmprestimo", qualEmprestimo.IdEmprestimo);
                 _conexao.Open();

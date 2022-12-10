@@ -151,7 +151,7 @@ namespace apBiblioteca_22132_22148.DAL
         {
             try
             {
-                String sql = "DELETE FROM bibLeitor WHERE idLeitor = @idLeitor ";
+                string sql = "DELETE FROM bibLeitor WHERE idLeitor = @idLeitor ";
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
                 cmd.Parameters.AddWithValue("@idLivro", qualLeitor.IdLeitor);
                 _conexao.Open();

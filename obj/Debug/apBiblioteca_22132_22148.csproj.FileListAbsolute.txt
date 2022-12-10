@@ -1,0 +1,11 @@
+C:\Users\User-PC\Desktop\apBiblioteca\obj\Debug\apBiblioteca_22132_22148.csproj.AssemblyReference.cache
+C:\Users\User-PC\Desktop\apBiblioteca\obj\Debug\apBiblioteca_22132_22148.csproj.SuggestedBindingRedirects.cache
+C:\Users\User-PC\Desktop\apBiblioteca\obj\Debug\apBiblioteca_22132_22148.Properties.Resources.resources
+C:\Users\User-PC\Desktop\apBiblioteca\obj\Debug\apBiblioteca_22132_22148.UI.FrmPrincipal.resources
+C:\Users\User-PC\Desktop\apBiblioteca\obj\Debug\apBiblioteca_22132_22148.csproj.GenerateResource.cache
+C:\Users\User-PC\Desktop\apBiblioteca\obj\Debug\apBiblioteca_22132_22148.csproj.CoreCompileInputs.cache
+C:\Users\User-PC\Desktop\apBiblioteca\bin\Debug\apBiblioteca_22132_22148.exe.config
+C:\Users\User-PC\Desktop\apBiblioteca\bin\Debug\apBiblioteca_22132_22148.exe
+C:\Users\User-PC\Desktop\apBiblioteca\bin\Debug\apBiblioteca_22132_22148.pdb
+C:\Users\User-PC\Desktop\apBiblioteca\obj\Debug\apBiblioteca_22132_22148.exe
+C:\Users\User-PC\Desktop\apBiblioteca\obj\Debug\apBiblioteca_22132_22148.pdb
