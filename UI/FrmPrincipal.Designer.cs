@@ -45,6 +45,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.operaçõesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -67,6 +68,7 @@
             this.cadastroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.livrosToolStripMenuItem,
             this.leitoresToolStripMenuItem,
+            this.operaçõesToolStripMenuItem1,
             this.sairToolStripMenuItem});
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
             this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
@@ -102,13 +104,13 @@
             // simToolStripMenuItem
             // 
             this.simToolStripMenuItem.Name = "simToolStripMenuItem";
-            this.simToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.simToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.simToolStripMenuItem.Text = "Sim";
             // 
             // nãoToolStripMenuItem
             // 
             this.nãoToolStripMenuItem.Name = "nãoToolStripMenuItem";
-            this.nãoToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.nãoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nãoToolStripMenuItem.Text = "Não";
             // 
             // operaçõesToolStripMenuItem
@@ -195,6 +197,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Banco de Dados:";
             // 
+            // operaçõesToolStripMenuItem1
+            // 
+            this.operaçõesToolStripMenuItem1.Name = "operaçõesToolStripMenuItem1";
+            this.operaçõesToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.operaçõesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.operaçõesToolStripMenuItem1.Text = "&Operações";
+            this.operaçõesToolStripMenuItem1.Click += new System.EventHandler(this.operaçõesToolStripMenuItem1_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -233,5 +243,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem operaçõesToolStripMenuItem1;
     }
 }

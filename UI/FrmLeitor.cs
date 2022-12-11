@@ -12,9 +12,13 @@ namespace apBiblioteca_22132_22148.UI
 {
     public partial class FrmLeitor : Form
     {
-        public FrmLeitor()
+        public string banco, usuario, senha;
+        public FrmLeitor(string banco, string usuario, string senha)
         {
             InitializeComponent();
+            this.banco = banco;
+            this.usuario = usuario;
+            this.senha = senha;
         }
     }
 }

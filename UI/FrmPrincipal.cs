@@ -54,5 +54,16 @@ namespace apBiblioteca_22132_22148.UI
                 frmLeitor.Show();
             }
         }
+
+        private void operaçõesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (txtBanco.Text == "" || txtUsuario.Text == "" || txtSenha.Text == "")
+                MessageBox.Show("Preencha os dados de conexão!");
+            else
+            {
+                frmOperacoes = new FrmOperacoes(txtBanco.Text, txtUsuario.Text, txtSenha.Text);
+                frmOperacoes.Show();
+            }
+        }
     }
 }

@@ -22,7 +22,7 @@ namespace apBiblioteca_22132_22148.BLL
                 DataTable tb = new DataTable();
                 try
                 {
-                    dal = new DAL.LivroDAL(banco, usuario, senha);
+                    dal = new LivroDAL(banco, usuario, senha);
                     tb = dal.SelectLivros();
                 }
                 catch (Exception ex)
@@ -36,7 +36,7 @@ namespace apBiblioteca_22132_22148.BLL
         {
             try
             {
-                dal = new DAL.LivroDAL(banco, usuario, senha);
+                dal = new LivroDAL(banco, usuario, senha);
                 dal.InsertLivro(livro);
             }
             catch (Exception ex)
@@ -48,7 +48,7 @@ namespace apBiblioteca_22132_22148.BLL
         {
             try
             {
-                dal = new DAL.LivroDAL(banco, usuario, senha);
+                dal = new LivroDAL(banco, usuario, senha);
                 dal.UpdateLivro(livro);
             }
             catch (Exception ex)
@@ -60,7 +60,7 @@ namespace apBiblioteca_22132_22148.BLL
         {
             try
             {
-                dal = new DAL.LivroDAL(banco, usuario, senha);
+                dal = new LivroDAL(banco, usuario, senha);
                 dal.DeleteLivro(livro);
             }
             catch (Exception ex)
@@ -72,7 +72,7 @@ namespace apBiblioteca_22132_22148.BLL
         {
             try
             {
-                dal = new DAL.LivroDAL(banco, usuario, senha);
+                dal = new LivroDAL(banco, usuario, senha);
                 return dal.SelectListLivros();
             }
             catch (Exception ex)
@@ -84,7 +84,7 @@ namespace apBiblioteca_22132_22148.BLL
         {
             try
             {
-                dal = new DAL.LivroDAL(banco, usuario, senha);
+                dal = new LivroDAL(banco, usuario, senha);
                 return dal.SelectLivroById(id);
             }
             catch (Exception ex)
@@ -96,7 +96,7 @@ namespace apBiblioteca_22132_22148.BLL
         {
             try
             {
-                dal = new DAL.LivroDAL(banco, usuario, senha);
+                dal = new LivroDAL(banco, usuario, senha);
                 return dal.SelectLivroByCodigo(codigo);
             }
             catch (Exception ex)

@@ -9,3 +9,6 @@ C:\Users\User-PC\Desktop\apBiblioteca\bin\Debug\apBiblioteca_22132_22148.exe
 C:\Users\User-PC\Desktop\apBiblioteca\bin\Debug\apBiblioteca_22132_22148.pdb
 C:\Users\User-PC\Desktop\apBiblioteca\obj\Debug\apBiblioteca_22132_22148.exe
 C:\Users\User-PC\Desktop\apBiblioteca\obj\Debug\apBiblioteca_22132_22148.pdb
+C:\Users\User-PC\Desktop\apBiblioteca\obj\Debug\apBiblioteca_22132_22148.UI.FrmLeitor.resources
+C:\Users\User-PC\Desktop\apBiblioteca\obj\Debug\apBiblioteca_22132_22148.UI.FrmLivro.resources
+C:\Users\User-PC\Desktop\apBiblioteca\obj\Debug\apBiblioteca_22132_22148.UI.FrmOperacoes.resources
