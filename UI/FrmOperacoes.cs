@@ -36,7 +36,7 @@ namespace apBiblioteca_22132_22148.UI
                 dgvOperacoes.Columns[2].HeaderText = "Id Leitor";
                 dgvOperacoes.Columns[3].HeaderText = "Data Empréstimo";
                 dgvOperacoes.Columns[4].HeaderText = "Data Devolução Prevista";
-                dgvOperacoes.Columns[5].HeaderText = "Data Devolução Real";
+               // dgvOperacoes.Columns[5].HeaderText = "Data Devolução Real";
 
 
             }

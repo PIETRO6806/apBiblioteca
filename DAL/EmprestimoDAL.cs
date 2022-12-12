@@ -29,11 +29,11 @@ namespace apBiblioteca_22132_22148.DAL
                 while (dr.Read())
                 {
                     var emprestimo = new Emprestimo((int)dr["idEmprestimo"],
-                    (int)dr["idLivro"]/* + ""*/,
-                    (int)dr["idLeitor"] /*+ ""*/,
-                    (DateTime)dr["dataEmprestimo"] /*+ ""*/,
-                    (DateTime)dr["dataDevolucaoPrevista"] /*= ""*/,
-                    (DateTime)dr["dataDevolucaoReal"] /*= ""*/
+                    (int)dr["idLivro"],
+                    (int)dr["idLeitor"],
+                    (DateTime)dr["dataEmprestimo"],
+                    (DateTime)dr["dataDevolucaoPrevista"],
+                    (DateTime)dr["dataDevolucaoReal"]
                     );
                     listaEmprestimos.Add(emprestimo);
                 }
