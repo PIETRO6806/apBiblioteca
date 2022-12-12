@@ -135,5 +135,44 @@ namespace apBiblioteca_22132_22148.BLL
             }
         }
 
+        public int QuantosEmprestimos()
+        {
+            try
+            {
+                dal = new EmprestimoDAL(banco, usuario, senha);
+                return dal.SelectCountEmprestimos();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public int QuantosLeitoresComEmprestimos()
+        {
+            try
+            {
+                dal = new EmprestimoDAL(banco, usuario, senha);
+                return dal.SelectCountLeitoresWithEmprestimos();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public int SelectLivroComMaiorDemanda()
+        {
+            try
+            {
+                dal = new EmprestimoDAL(banco, usuario, senha);
+                return dal.SelectTop1CountLivrosWithEmprestimo();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

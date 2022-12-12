@@ -36,6 +36,10 @@ namespace apBiblioteca_22132_22148.BLL
             try
             {
                 dal = new LeitorDAL(banco, usuario, senha);
+                if(dal.SelectLeitorById(leitor.IdLeitor) != null)
+                {
+                    throw new Exception("Já existe um usuário com este ID, insira outro.");
+                }
                 dal.InsertLeitor(leitor);
             }
             catch (Exception ex)
@@ -96,5 +100,19 @@ namespace apBiblioteca_22132_22148.BLL
                 throw ex;
             }
         }
+
+        public int QuantosLeitores()
+        {
+            try
+            {
+                dal = new LeitorDAL(banco, usuario, senha);
+                return dal.SelectCountLeitores();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

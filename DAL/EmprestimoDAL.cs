@@ -307,6 +307,75 @@ namespace apBiblioteca_22132_22148.DAL
             }
         }
 
+        public int SelectCountEmprestimos()
+        {
+            try
+            {
+                string sql = "SELECT COUNT(*) AS 'quantos' FROM bibEmprestimo";
+                SqlCommand cmd = new SqlCommand(sql, _conexao);
+                _conexao.Open();
+                SqlDataReader dr;
+                dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                int quantosEmprestimos= 0;
+                if (dr.Read())
+                {
+                    quantosEmprestimos = int.Parse(dr["quantos"].ToString());
+                }
+                _conexao.Close();
+                return quantosEmprestimos;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public int SelectCountLeitoresWithEmprestimos()
+        {
+            try
+            {
+                string sql = "SELECT COUNT(DISTINCT idLeitor) AS 'quantos' FROM bibEmprestimo";
+                SqlCommand cmd = new SqlCommand(sql, _conexao);
+                _conexao.Open();
+                SqlDataReader dr;
+                dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                int quantosLeitoresComEmprestimo = 0;
+                if (dr.Read())
+                {
+                    quantosLeitoresComEmprestimo = int.Parse(dr["quantos"].ToString());
+                }
+                _conexao.Close();
+                return quantosLeitoresComEmprestimo;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public int SelectTop1CountLivrosWithEmprestimo()
+        {
+            try
+            {
+                string sql = "SELECT TOP 1 idLivro  FROM bibEmprestimo GROUP BY IdLivro ORDER BY COUNT(idLivro) DESC";
+                SqlCommand cmd = new SqlCommand(sql, _conexao);
+                _conexao.Open();
+                SqlDataReader dr;
+                dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                int quantosEmprestimos = 0;
+                if (dr.Read())
+                {
+                    quantosEmprestimos = int.Parse(dr["idLivro"].ToString());
+                }
+                _conexao.Close();
+                return quantosEmprestimos;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }
 

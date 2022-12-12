@@ -76,7 +76,7 @@
             // 
             this.livrosToolStripMenuItem.Name = "livrosToolStripMenuItem";
             this.livrosToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
-            this.livrosToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.livrosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.livrosToolStripMenuItem.Text = "&Livros";
             this.livrosToolStripMenuItem.Click += new System.EventHandler(this.livrosToolStripMenuItem_Click);
             // 
@@ -84,7 +84,7 @@
             // 
             this.leitoresToolStripMenuItem.Name = "leitoresToolStripMenuItem";
             this.leitoresToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.leitoresToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.leitoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.leitoresToolStripMenuItem.Text = "L&eitores";
             this.leitoresToolStripMenuItem.Click += new System.EventHandler(this.leitoresToolStripMenuItem_Click);
             // 
@@ -96,19 +96,20 @@
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
             this.sairToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
             | System.Windows.Forms.Keys.S)));
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sairToolStripMenuItem.Text = "Sai&r";
             // 
             // simToolStripMenuItem
             // 
             this.simToolStripMenuItem.Name = "simToolStripMenuItem";
-            this.simToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.simToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.simToolStripMenuItem.Text = "Sim";
+            this.simToolStripMenuItem.Click += new System.EventHandler(this.simToolStripMenuItem_Click);
             // 
             // nãoToolStripMenuItem
             // 
             this.nãoToolStripMenuItem.Name = "nãoToolStripMenuItem";
-            this.nãoToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.nãoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nãoToolStripMenuItem.Text = "Não";
             // 
             // operaçõesToolStripMenuItem

@@ -77,5 +77,10 @@ namespace apBiblioteca_22132_22148.UI
                 frmRelatorios.Show();
             }
         }
+
+        private void simToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

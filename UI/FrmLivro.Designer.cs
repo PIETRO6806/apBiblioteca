@@ -64,6 +64,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.Chartreuse;
             this.tabPage1.Controls.Add(this.btnExibir);
             this.tabPage1.Controls.Add(this.btnExcluir);
             this.tabPage1.Controls.Add(this.btnAlterar);
@@ -83,7 +84,6 @@
             this.tabPage1.Size = new System.Drawing.Size(768, 400);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Cadastro";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // btnExibir
             // 
@@ -204,6 +204,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.Color.GreenYellow;
             this.tabPage2.Controls.Add(this.dgvLivro);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -211,7 +212,6 @@
             this.tabPage2.Size = new System.Drawing.Size(768, 400);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Lista";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // dgvLivro
             // 

@@ -37,6 +37,10 @@ namespace apBiblioteca_22132_22148.BLL
             try
             {
                 dal = new LivroDAL(banco, usuario, senha);
+                if (dal.SelectLivroById(livro.IdLivro) != null)
+                {
+                    throw new Exception("Já existe um livro com este ID, insira outro.");
+                }
                 dal.InsertLivro(livro);
             }
             catch (Exception ex)

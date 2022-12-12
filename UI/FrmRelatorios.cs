@@ -24,9 +24,14 @@ namespace apBiblioteca_22132_22148.UI
             this.senha = senha;
 
             LivroBLL livroBLL = new LivroBLL(banco, usuario, senha);
+            EmprestimoBLL emprestimoBLL = new EmprestimoBLL(banco, usuario, senha);
+            LeitorBLL leitorBLL = new LeitorBLL(banco, usuario, senha);
+
             lbQtosLivros.Text = livroBLL.QuantosLivros().ToString();
-            //lbQtsLivrosEmprestados.Text = livroBLL.
-            //lbQtosLivrosDevolvidos.Text = livroBLL.
+            lbQtsLivrosEmprestados.Text = emprestimoBLL.QuantosEmprestimos().ToString();
+            lbQtosLeitores.Text = leitorBLL.QuantosLeitores().ToString();
+            lbLivroMaiorDemanda.Text = livroBLL.ListarLivroPorId(emprestimoBLL.SelectLivroComMaiorDemanda()).TituloLivro;
+            lbQtosLeitoresComPendencias.Text = emprestimoBLL.QuantosLeitoresComEmprestimos().ToString();
         }
     }
 }

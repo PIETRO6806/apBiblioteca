@@ -55,6 +55,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.BackColor = System.Drawing.Color.LightSeaGreen;
             this.tabPage3.Controls.Add(this.dgvOperacoes);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
@@ -62,7 +63,6 @@
             this.tabPage3.Size = new System.Drawing.Size(768, 400);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Lista";
-            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // dgvOperacoes
             // 
@@ -76,6 +76,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.LightSeaGreen;
             this.tabPage1.Controls.Add(this.btnDevolver);
             this.tabPage1.Controls.Add(this.btnProcurar);
             this.tabPage1.Controls.Add(this.btnExibir);
@@ -97,7 +98,6 @@
             this.tabPage1.Size = new System.Drawing.Size(768, 400);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Empréstimo";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // btnDevolver
             // 
