@@ -36,20 +36,20 @@ namespace apBiblioteca_22132_22148.BLL
             try
             {
                 LivroDAL livroDal = new LivroDAL(banco, usuario, senha);
-                if(livroDal.SelectLivroById(emprestimo.IdLivro) == null)
+                if(livroDal.SelectLivroById(emprestimo.IdLivro) == null)  //se o livro não existir, não se pode emprestá-lo
                 {
                     throw new Exception("Não é possível emprestar um livro que não existe!");
                 }
 
-                LeitorDAL leitorDal = new LeitorDAL(banco, usuario, senha);
+                LeitorDAL leitorDal = new LeitorDAL(banco, usuario, senha); //se o leitor não existir, não se pode emprestar livros para ele
                 if(leitorDal.SelectLeitorById(emprestimo.IdLeitor) == null)
                 {
                     throw new Exception("Não é póssível emprestar um livro para alguém que não existe!");
                 }
 
                 dal = new EmprestimoDAL(banco, usuario, senha);
-                if(dal.SelectCountEmprestimosByIdLeitor(emprestimo.IdLeitor) >= 5)
-                {
+                if(dal.SelectCountEmprestimosByIdLeitor(emprestimo.IdLeitor) >= 5)  //se o leitor já tiver 5 empréstimos, ele não pode
+                {                                                                   //emprestar mais até devolver algum
                     throw new Exception("Não é possível emprestar mais livros para o Leitor, pois ele já tem 5 empréstimos pendentes!");
                 }
                 dal.InsertEmprestimo(emprestimo);

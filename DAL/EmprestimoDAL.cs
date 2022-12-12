@@ -67,6 +67,30 @@ namespace apBiblioteca_22132_22148.DAL
                 }
             }
         }
+
+        /*public DataTable SelectDevolucoes()
+        {
+            {
+                try
+                {
+                    string sql = "SELECT idEmprestimo,idLivro,idLeitor,dataEmprestimo," +
+                        "dataDevolucaoPrevista, dataDevolucaoReal FROM bibEmprestimo WHERE dataDevolucaoReal != null";
+                    SqlCommand cmd = new SqlCommand(sql, _conexao);
+                    _conexao.Open();
+                    SqlDataAdapter da = new SqlDataAdapter();
+                    da.SelectCommand = cmd;
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    _conexao.Close();
+                    return dt;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+        }*/
+
         public Emprestimo SelectEmprestimoById(int idDesejado)
         {
             try
@@ -252,6 +276,30 @@ namespace apBiblioteca_22132_22148.DAL
                 }
                 _conexao.Close();
                 return quantosEmprestimosByIdLeitor;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public int SelectCountEmprestimosByIdLivro(int idLivro)
+        {
+            try
+            {
+                string sql = "SELECT COUNT(*) AS 'quantos' FROM bibEmprestimo WHERE idLivro = @id";
+                SqlCommand cmd = new SqlCommand(sql, _conexao);
+                cmd.Parameters.AddWithValue("@id", idLivro);
+                _conexao.Open();
+                SqlDataReader dr;
+                dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                int quantosEmprestimosByIdLivro = 0;
+                if (dr.Read())
+                {
+                    quantosEmprestimosByIdLivro = int.Parse(dr["quantos"].ToString());
+                }
+                _conexao.Close();
+                return quantosEmprestimosByIdLivro;
             }
             catch (Exception ex)
             {

@@ -60,8 +60,8 @@ namespace apBiblioteca_22132_22148.BLL
             try
             {
                 EmprestimoDAL dalEmprestimo = new EmprestimoDAL(banco, usuario, senha);
-                if (dalEmprestimo.SelectEmprestimoByIdLivro(leitor.IdLeitor) != null)
-                {
+                if (dalEmprestimo.SelectEmprestimoByIdLivro(leitor.IdLeitor) != null) //se o leitor tiver pendências com a Biblioteca ainda,
+                {                                                                     //ele não pode ser excluído
                     throw new Exception("Não é possível excluir o Leitor, pois há emprestimos com ele!");
                 }
                     dal = new LeitorDAL(banco, usuario, senha);
@@ -96,17 +96,5 @@ namespace apBiblioteca_22132_22148.BLL
                 throw ex;
             }
         }
-        /*public Leitor ListarLeitorPorCodigo(string codigo)
-        {
-            try
-            {
-                dal = new DAL.LeitorDAL(banco, usuario, senha);
-                return dal.SelectLeitorByCodigo(codigo);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }*/
     }
 }

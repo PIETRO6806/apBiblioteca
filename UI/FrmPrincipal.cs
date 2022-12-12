@@ -18,6 +18,7 @@ namespace apBiblioteca_22132_22148.UI
         FrmLivro frmLivro = null;
         FrmLeitor frmLeitor = null;
         FrmOperacoes frmOperacoes = null;
+        FrmRelatorios frmRelatorios = null;
 
         public FrmPrincipal()
         {
@@ -63,6 +64,17 @@ namespace apBiblioteca_22132_22148.UI
             {
                 frmOperacoes = new FrmOperacoes(txtBanco.Text, txtUsuario.Text, txtSenha.Text);
                 frmOperacoes.Show();
+            }
+        }
+
+        private void relatóriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (txtBanco.Text == "" || txtUsuario.Text == "" || txtSenha.Text == "")
+                MessageBox.Show("Preencha os dados de conexão!");
+            else
+            {
+                frmRelatorios = new FrmRelatorios(txtBanco.Text, txtUsuario.Text, txtSenha.Text);
+                frmRelatorios.Show();
             }
         }
     }

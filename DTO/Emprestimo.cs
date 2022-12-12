@@ -82,5 +82,15 @@ namespace apBiblioteca_22132_22148.DTO
             DataDevolucaoPrevista = dataDevolucaoPrevista;
             DataDevolucaoReal = dataDevolucaoReal;
         }
+
+        /*public Emprestimo(int emprestimo, int livro, int leitor,
+                          DateTime data, DateTime dataDevolucaoPrevista)
+        {
+            IdEmprestimo = emprestimo;
+            IdLivro = livro;
+            IdLeitor = leitor;
+            DataEmprestimo = data;
+            DataDevolucaoPrevista = dataDevolucaoPrevista;
+        }*/
     }
 }

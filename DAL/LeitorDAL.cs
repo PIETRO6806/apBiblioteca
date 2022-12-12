@@ -195,5 +195,29 @@ namespace apBiblioteca_22132_22148.DAL
                 _conexao.Close();
             }
         }
+
+        public int SelectCountLeitores()
+        {
+            try
+            {
+                string sql = "SELECT COUNT(*) AS 'quantos' FROM bibLeitor";
+                SqlCommand cmd = new SqlCommand(sql, _conexao);
+                _conexao.Open();
+                SqlDataReader dr;
+                dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                int quantosLeitores = 0;
+                if (dr.Read())
+                {
+                    quantosLeitores = int.Parse(dr["quantos"].ToString());
+                }
+                _conexao.Close();
+                return quantosLeitores;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

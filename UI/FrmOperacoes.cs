@@ -81,10 +81,12 @@ namespace apBiblioteca_22132_22148.UI
             }
         }
 
+
         private void btnNovo_Click(object sender, EventArgs e)
         {
             DateTime hoje = DateTime.Now.Date;
             DateTime devPrevista = DateTime.Now.AddDays(14).Date;
+
 
             txtDataDeEmprestimo.Text = hoje.ToString();
             txtDataDeDevolucaoPrevista.Text = devPrevista.ToString();

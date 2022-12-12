@@ -26,3 +26,4 @@ C:\Users\u22148\Desktop\apBiblioteca\obj\Debug\apBiblioteca_22132_22148.csproj.G
 C:\Users\u22148\Desktop\apBiblioteca\obj\Debug\apBiblioteca_22132_22148.csproj.CoreCompileInputs.cache
 C:\Users\u22148\Desktop\apBiblioteca\obj\Debug\apBiblioteca_22132_22148.exe
 C:\Users\u22148\Desktop\apBiblioteca\obj\Debug\apBiblioteca_22132_22148.pdb
+C:\Users\u22148\Desktop\apBiblioteca\obj\Debug\apBiblioteca_22132_22148.UI.FrmRelatorios.resources
