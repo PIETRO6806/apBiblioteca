@@ -31,8 +31,11 @@ namespace apBiblioteca_22132_22148.DTO
             get => codigoLivro;
             set
             {
-                // remove qualquer caracter além do tamanho máximo do campo
-                value = value.Remove(tamanhoCodigo);
+                if (value.Length > tamanhoCodigo)
+                {
+                    // remove qualquer caracter além do tamanho máximo do campo
+                    value = value.Remove(tamanhoCodigo);
+                }
                 // preenche codigo com zeros à esquerda até completar o tamanho mãximo
                 value = value.PadLeft(tamanhoCodigo, '0');
                 // armazena o valor passado no atributo de destino
@@ -44,8 +47,11 @@ namespace apBiblioteca_22132_22148.DTO
             get => tituloLivro;
             set
             {
-                // remove qualquer caracter além do tamanho máximo do campo
-                value = value.Remove(tamanhoTitulo);
+                if (value.Length > tamanhoTitulo)
+                {
+                    // remove qualquer caracter além do tamanho máximo do campo
+                    value = value.Remove(tamanhoTitulo);
+                }
                 // preenche título com espaços à direita até completar o tamanho mãximo
                 value = value.PadRight(tamanhoTitulo, ' ');
                 // armazena o valor passado no atributo de destino
@@ -57,8 +63,11 @@ namespace apBiblioteca_22132_22148.DTO
             get => autorLivro;
             set
             {
-                // remove qualquer caracter além do tamanho máximo do campo
-                value = value.Remove(tamanhoAutor);
+                if (value.Length > tamanhoAutor)
+                {
+                    // remove qualquer caracter além do tamanho máximo do campo
+                    value = value.Remove(tamanhoAutor);
+                }
                 // preenche título com espaços à direita até completar o tamanho mãximo
                 value = value.PadRight(tamanhoAutor, ' ');
                 // armazena o valor passado no atributo de destino

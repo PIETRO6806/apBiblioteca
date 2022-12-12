@@ -43,10 +43,7 @@ namespace apBiblioteca_22132_22148.UI
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            var livro = new Livro(0, "", "", "");
-            livro.CodigoLivro = txtCodigoLivro.Text;
-            livro.TituloLivro = txtTituloLivro.Text;
-            livro.AutorLivro = txtAutorLivro.Text;
+            var livro = new Livro(int.Parse(txtIdLivro.Text), txtCodigoLivro.Text, txtTituloLivro.Text, txtAutorLivro.Text);
             try
             {
                 var bll = new LivroBLL(banco, usuario, senha);

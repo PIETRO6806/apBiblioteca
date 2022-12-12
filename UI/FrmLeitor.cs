@@ -95,12 +95,8 @@ namespace apBiblioteca_22132_22148.UI
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            var leitor = new Leitor(0, "", "", "", "");
-            txtIdLeitor.Text = leitor.IdLeitor.ToString();
-            txtNomeLeitor.Text = leitor.NomeLeitor;
-            txtTelefoneLeitor.Text = leitor.TelefoneLeitor;
-            txtEmailLeitor.Text = leitor.EmailLeitor;
-            txtEnderecoLeitor.Text = leitor.EnderecoLeitor;
+            var leitor = new Leitor(int.Parse(txtIdLeitor.Text), txtNomeLeitor.Text, txtTelefoneLeitor.Text, txtEmailLeitor.Text, 
+                                    txtEnderecoLeitor.Text);
             try
             {
                 var bll = new LeitorBLL(banco, usuario, senha);

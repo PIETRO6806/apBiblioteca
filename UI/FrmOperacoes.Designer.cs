@@ -42,7 +42,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtDataDevolucaoReal = new System.Windows.Forms.TextBox();
             this.txtDataDeDevolucaoPrevista = new System.Windows.Forms.TextBox();
             this.txtDataDeEmprestimo = new System.Windows.Forms.TextBox();
             this.txtIdLeitor = new System.Windows.Forms.TextBox();
@@ -89,7 +89,7 @@
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.textBox6);
+            this.tabPage1.Controls.Add(this.txtDataDevolucaoReal);
             this.tabPage1.Controls.Add(this.txtDataDeDevolucaoPrevista);
             this.tabPage1.Controls.Add(this.txtDataDeEmprestimo);
             this.tabPage1.Controls.Add(this.txtIdLeitor);
@@ -206,13 +206,13 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Identificação:";
             // 
-            // textBox6
+            // txtDataDevolucaoReal
             // 
-            this.textBox6.Location = new System.Drawing.Point(166, 182);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 5;
+            this.txtDataDevolucaoReal.Location = new System.Drawing.Point(166, 182);
+            this.txtDataDevolucaoReal.Name = "txtDataDevolucaoReal";
+            this.txtDataDevolucaoReal.ReadOnly = true;
+            this.txtDataDevolucaoReal.Size = new System.Drawing.Size(100, 20);
+            this.txtDataDevolucaoReal.TabIndex = 5;
             // 
             // txtDataDeDevolucaoPrevista
             // 
@@ -295,7 +295,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtDataDevolucaoReal;
         private System.Windows.Forms.TextBox txtDataDeDevolucaoPrevista;
         private System.Windows.Forms.TextBox txtDataDeEmprestimo;
         private System.Windows.Forms.TextBox txtIdLeitor;

@@ -108,7 +108,7 @@ namespace apBiblioteca_22132_22148.DAL
                     livro = new Livro(Convert.ToInt32(dr["idLivro"]),
                     dr["codigoLivro"].ToString(),
                     dr["tituloLivro"].ToString(),
-                    dr["autoroLIvro"].ToString());
+                    dr["autorLIvro"].ToString());
 
                 _conexao.Close();
                 return livro;
@@ -123,9 +123,10 @@ namespace apBiblioteca_22132_22148.DAL
             try
             {
                 string sql = "INSERT INTO bibLivro " +
-                " (codigoLivro, tituloLivro, autorLivro) " +
-                " VALUES (@codigo,@titulo, @autor) ";
+                " (idLivro, codigoLivro, tituloLivro, autorLivro) " +
+                " VALUES (@id,@codigo,@titulo, @autor) ";
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
+                cmd.Parameters.AddWithValue("@id", qualLivro.IdLivro);
                 cmd.Parameters.AddWithValue("@codigo", qualLivro.CodigoLivro);
                 cmd.Parameters.AddWithValue("@titulo", qualLivro.TituloLivro);
                 cmd.Parameters.AddWithValue("@autor", qualLivro.AutorLivro);

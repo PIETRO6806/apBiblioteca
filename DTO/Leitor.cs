@@ -31,8 +31,10 @@ namespace apBiblioteca_22132_22148.DTO
             get => nomeLeitor;
             set
             {
-                value = value.Remove(tamanhoLeitor);
-                value = value.PadLeft(tamanhoLeitor, '0');
+                if (value.Length > tamanhoLeitor)
+                {
+                    value = value.Remove(tamanhoLeitor);
+                }
                 nomeLeitor = value;
             }
         }
@@ -42,8 +44,10 @@ namespace apBiblioteca_22132_22148.DTO
             get => telefoneLeitor;
             set
             {
-                value = value.Remove(tamanhoTelefone);
-                value = value.PadLeft(tamanhoTelefone, ' ');
+                if (value.Length > tamanhoTelefone)
+                {
+                    value = value.Remove(tamanhoTelefone);
+                }
                 telefoneLeitor = value;
             }
         }
@@ -53,8 +57,10 @@ namespace apBiblioteca_22132_22148.DTO
             get => emailLeitor;
             set
             {
-                value = value.Remove(tamanhoEmail);
-                value = value.PadLeft(tamanhoEmail, ' ');
+                if (value.Length > tamanhoEmail)
+                {
+                    value = value.Remove(tamanhoEmail);
+                }
                 emailLeitor = value;
             }
         }
@@ -64,8 +70,10 @@ namespace apBiblioteca_22132_22148.DTO
             get => enderecoLeitor;
             set
             {
-                value = value.Remove(tamanhoEndereco);
-                value = value.PadLeft(tamanhoEndereco, ' ');
+                if (value.Length > tamanhoEndereco)
+                {
+                    value = value.Remove(tamanhoEndereco);
+                }
                 enderecoLeitor = value;
             }
         }
