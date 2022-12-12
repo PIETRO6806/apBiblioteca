@@ -196,6 +196,29 @@ namespace apBiblioteca_22132_22148.DAL
                 _conexao.Close();
             }
         }
+
+        public void RenovarEmprestimo(Emprestimo qualEmprestimo)
+        {
+            try
+            {
+                string sql = "UPDATE bibEmprestimo " +
+                " SET dataDevolucaoPrevista=@dataDevolucaoPrevista  WHERE idEmprestimo = @idEmprestimo";
+               
+                SqlCommand cmd = new SqlCommand(sql, _conexao);
+                cmd.Parameters.AddWithValue("@idEmprestimo", qualEmprestimo.IdEmprestimo);
+                cmd.Parameters.AddWithValue("@dataDevolucaoPrevista", qualEmprestimo.DataDevolucaoPrevista);
+                _conexao.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                _conexao.Close();
+            }
+        }
     }
 }
 

@@ -21,7 +21,7 @@ namespace apBiblioteca_22132_22148.BLL
                 DataTable tb = new DataTable();
                 try
                 {
-                    dal = new DAL.EmprestimoDAL(banco, usuario, senha);
+                    dal = new EmprestimoDAL(banco, usuario, senha);
                     tb = dal.SelectEmprestimos();
                 }
                 catch (Exception ex)
@@ -47,7 +47,7 @@ namespace apBiblioteca_22132_22148.BLL
         {
             try
             {
-                dal = new DAL.EmprestimoDAL(banco, usuario, senha);
+                dal = new EmprestimoDAL(banco, usuario, senha);
                 dal.UpdateEmprestimo(emprestimo);
             }
             catch (Exception ex)
@@ -55,6 +55,20 @@ namespace apBiblioteca_22132_22148.BLL
                 throw ex;
             }
         }
+
+        public void RenovarEmprestimo(Emprestimo emprestimo)
+        {
+            try
+            {
+                dal = new EmprestimoDAL(banco, usuario, senha);
+                dal.RenovarEmprestimo(emprestimo);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public void ExcluirEmprestimo(Emprestimo emprestimo)
         {
             try
