@@ -110,5 +110,18 @@ namespace apBiblioteca_22132_22148.BLL
                 throw ex;
             }
         }
+
+        public int QuantosLivros()
+        {
+            try
+            {
+                dal = new LivroDAL(banco, usuario, senha);
+                return dal.SelectCountLivros();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

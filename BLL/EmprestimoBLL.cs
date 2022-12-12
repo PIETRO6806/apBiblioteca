@@ -100,7 +100,7 @@ namespace apBiblioteca_22132_22148.BLL
         {
             try
             {
-                dal = new DAL.EmprestimoDAL(banco, usuario, senha);
+                dal = new EmprestimoDAL(banco, usuario, senha);
                 return dal.SelectEmprestimoById(id);
             }
             catch (Exception ex)
@@ -108,17 +108,32 @@ namespace apBiblioteca_22132_22148.BLL
                 throw ex;
             }
         }
-        /*public Emprestimo ListarEmprestimoPorCodigo(string codigo)
+
+        public int QuantosEmprestimosPorIdLeitor(int idLeitor)
         {
             try
             {
-                dal = new DAL.EmprestimoDAL(banco, usuario, senha);
-                return dal.SelectEmprestimoByCodigo(codigo);
+                dal = new EmprestimoDAL(banco, usuario, senha);
+                return dal.SelectCountEmprestimosByIdLeitor(idLeitor);
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public int QuantosEmprestimosPorIdLivro(int idLivro)
+        {
+            try
+            {
+                dal = new EmprestimoDAL(banco, usuario, senha);
+                return dal.SelectCountEmprestimosByIdLivro(idLivro);
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-        }*/
+        }
+
     }
 }

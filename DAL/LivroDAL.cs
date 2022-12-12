@@ -186,5 +186,29 @@ namespace apBiblioteca_22132_22148.DAL
                 _conexao.Close();
             }
         }
+
+        public int SelectCountLivros()
+        {
+            try
+            {
+                string sql = "SELECT COUNT(*) AS 'quantos' FROM bibLivro";
+                SqlCommand cmd = new SqlCommand(sql, _conexao);
+                _conexao.Open();
+                SqlDataReader dr;
+                dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                int quantosLivros = 0;
+                if (dr.Read())
+                {
+                    quantosLivros = int.Parse(dr["quantos"].ToString());
+                }
+                _conexao.Close();
+                return quantosLivros;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

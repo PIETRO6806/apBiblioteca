@@ -24,7 +24,7 @@ namespace apBiblioteca_22132_22148.UI
             this.senha = senha;
 
             LivroBLL livroBLL = new LivroBLL(banco, usuario, senha);
-            //lbQtosLivros.Text = livroBLL;
+            lbQtosLivros.Text = livroBLL.QuantosLivros().ToString();
             //lbQtsLivrosEmprestados.Text = livroBLL.
             //lbQtosLivrosDevolvidos.Text = livroBLL.
         }
