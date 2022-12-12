@@ -35,7 +35,19 @@ namespace apBiblioteca_22132_22148.BLL
         {
             try
             {
-                dal = new DAL.EmprestimoDAL(banco, usuario, senha);
+                LivroDAL livroDal = new LivroDAL(banco, usuario, senha);
+                if(livroDal.SelectLivroById(emprestimo.IdLivro) == null)
+                {
+                    throw new Exception("Não é possível emprestar um livro que não existe!");
+                }
+
+                LeitorDAL leitorDal = new LeitorDAL(banco, usuario, senha);
+                if(leitorDal.SelectLeitorById(emprestimo.IdLeitor) == null)
+                {
+                    throw new Exception("Não é póssível emprestar um livro para alguém que não existe!");
+                }
+
+                dal = new EmprestimoDAL(banco, usuario, senha);
                 dal.InsertEmprestimo(emprestimo);
             }
             catch (Exception ex)

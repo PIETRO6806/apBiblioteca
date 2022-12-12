@@ -61,8 +61,8 @@ namespace apBiblioteca_22132_22148.BLL
             try
             {
                 EmprestimoDAL dalEmprestimo = new EmprestimoDAL(banco, usuario, senha);
-                if (dal.SelectLivroById(livro.IdLivro) != null) //se houver empréstimo(s) com esse livro,
-                {                                               //nãp se pode excluí-lo
+                if (dalEmprestimo.SelectEmprestimoByIdLivro(livro.IdLivro) != null) //se houver empréstimo(s) com esse livro,
+                {                                                                   //não se pode excluí-lo
                     throw new Exception("Não é possível excluir o livro, pois há empréstimos com ele.");
                 }
                     dal = new LivroDAL(banco, usuario, senha);

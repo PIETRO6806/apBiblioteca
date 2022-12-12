@@ -50,7 +50,7 @@ namespace apBiblioteca_22132_22148.DAL
             {
                 try
                 {
-                    string sql = "SELECT idEmprestimo,idLivro,idLeitor,dataEmprestimo" +
+                    string sql = "SELECT idEmprestimo,idLivro,idLeitor,dataEmprestimo," +
                         "dataDevolucaoPrevista, dataDevolucaoReal FROM bibEmprestimo";
                     SqlCommand cmd = new SqlCommand(sql, _conexao);
                     _conexao.Open();
@@ -71,7 +71,7 @@ namespace apBiblioteca_22132_22148.DAL
         {
             try
             {
-                string sql = "SELECT idEmprestimo,idLivro,idLeitor,dataEmprestimo" +
+                string sql = "SELECT idEmprestimo,idLivro,idLeitor,dataEmprestimo," +
                         "dataDevolucaoPrevista, dataDevolucaoReal FROM bibEmprestimo" +
                         "WHERE idEmprestimo = @id";
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
@@ -98,39 +98,77 @@ namespace apBiblioteca_22132_22148.DAL
                 throw ex;
             }
         }
-       /* public Emprestimo SelectEmprestimoByCodigo(string codigoDesejado)
+        public Emprestimo SelectEmprestimoByIdLivro(int idDesejado)
         {
             try
             {
-                string sql = " SELECT idLivro, codigoLivro, tituloLivro, autorLivro " +
-                " FROM bibLivro WHERE codigoLivro = @codigo";
-                var cmd = new SqlCommand(sql, _conexao);
-                cmd.Parameters.AddWithValue("@codigo", codigo);
+                string sql = "SELECT idEmprestimo,idLivro,idLeitor,dataEmprestimo," +
+                        "dataDevolucaoPrevista, dataDevolucaoReal FROM bibEmprestimo" +
+                        "WHERE idLivro = @id";
+                SqlCommand cmd = new SqlCommand(sql, _conexao);
+                cmd.Parameters.AddWithValue("@id", idDesejado);
                 _conexao.Open();
                 SqlDataReader dr;
                 dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
-                Livro livro = null;
+                Emprestimo emprestimo = null;
                 if (dr.Read())
-                    livro = new Livro(Convert.ToInt32(dr["idLivro"]),
-                    dr["codigoLivro"].ToString(),
-                    dr["tituloLivro"].ToString(),
-                    dr["autoroLIvro"].ToString());
+                {
+                    emprestimo = new Emprestimo(Convert.ToInt32(dr["idEmprestimo"]),
+                    Convert.ToInt32(dr["idLivro"].ToString()),
+                    Convert.ToInt32(dr["idLeitor"].ToString()),
+                    Convert.ToDateTime(dr["dataEmprestimo"].ToString()),
+                    Convert.ToDateTime(dr["dataDevolucaoPrevista"].ToString()),
+                    Convert.ToDateTime(dr["dataDevolucaoReal"].ToString()));
 
+                }
                 _conexao.Close();
-                return livro;
+                return emprestimo;
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-        }*/
+        }
+
+        public Emprestimo SelectEmprestimoByIdLeitor(int idDesejado)
+        {
+            try
+            {
+                string sql = "SELECT idEmprestimo,idLivro,idLeitor,dataEmprestimo," +
+                        "dataDevolucaoPrevista, dataDevolucaoReal FROM bibEmprestimo" +
+                        "WHERE idLeitor = @id";
+                SqlCommand cmd = new SqlCommand(sql, _conexao);
+                cmd.Parameters.AddWithValue("@id", idDesejado);
+                _conexao.Open();
+                SqlDataReader dr;
+                dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                Emprestimo emprestimo = null;
+                if (dr.Read())
+                {
+                    emprestimo = new Emprestimo(Convert.ToInt32(dr["idEmprestimo"]),
+                    Convert.ToInt32(dr["idLivro"].ToString()),
+                    Convert.ToInt32(dr["idLeitor"].ToString()),
+                    Convert.ToDateTime(dr["dataEmprestimo"].ToString()),
+                    Convert.ToDateTime(dr["dataDevolucaoPrevista"].ToString()),
+                    Convert.ToDateTime(dr["dataDevolucaoReal"].ToString()));
+
+                }
+                _conexao.Close();
+                return emprestimo;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public void InsertEmprestimo(Emprestimo qualEmprestimo)
         {
             try
             {
                 string sql = "INSERT INTO bibEmprestimo " +
-                " (idLivro, idLeitor, dataEmprestimo, dataDevolucaoPrevista, datDevolucaoReal) " +
-                " VALUES (@livro,@leitor, @data, @dataDevolucaoPrevista, @dataDevolucaoReal) ";
+                 " (idLivro, idLeitor, dataEmprestimo, dataDevolucaoPrevista, dataDevolucaoReal) " +
+                 " VALUES (@livro,@leitor, @data, @dataDevolucaoPrevista, @dataDevolucaoReal) ";
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
                 cmd.Parameters.AddWithValue("@livro", qualEmprestimo.IdLivro);
                 cmd.Parameters.AddWithValue("@leitor", qualEmprestimo.IdLeitor);

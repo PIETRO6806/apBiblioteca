@@ -68,7 +68,7 @@ namespace apBiblioteca_22132_22148.UI
 
             txtDataDeEmprestimo.Text = hoje.ToString();
             txtDataDeDevolucaoPrevista.Text = devPrevista.ToString();
-            txtDataDevolucaoReal.Text = devPrevista.ToString();
+            //txtDataDevolucaoReal.Text = DateTime.MinValue.Date.ToString();
             var emprestimo = new Emprestimo(int.Parse(txtIdEmprestimo.Text),
                 int.Parse(txtIdLivro.Text), int.Parse(txtIdLeitor.Text),
                 hoje, devPrevista, devPrevista);

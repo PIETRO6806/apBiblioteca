@@ -95,33 +95,36 @@ namespace apBiblioteca_22132_22148.DAL
                 throw ex;
             }
         }
-        /*public Leitor SelectLeitorByCodigo(string codigoDesejado)
+        public Leitor SelectLeitorByNomeLeitor(string nomeDesejado)
         {
             try
             {
-                string sql = " SELECT idLeitor,nomeLeitor,telefoneLeitor,emailLeitor,enderecoLeitor " +
-                " FROM bibLeitor WHERE codigoLivro = @codigo";
-                var cmd = new SqlCommand(sql, _conexao);
-                cmd.Parameters.AddWithValue("@codigo", codigoDesejado);
+                string sql = "SELECT idLeitor,nomeLeitor,telefoneLeitor,emailLeitor,enderecoLeitor " +
+                " FROM bibLeitor WHERE nomeLeitor = @nome";
+                SqlCommand cmd = new SqlCommand(sql, _conexao);
+                cmd.Parameters.AddWithValue("@nome", nomeDesejado);
                 _conexao.Open();
                 SqlDataReader dr;
                 dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
-                Livro livro = null;
+                Leitor leitor = null;
                 if (dr.Read())
-                    livro = new Livro(Convert.ToInt32(dr["idLivro"]),
-                    dr["codigoLivro"].ToString(),
-                    dr["tituloLivro"].ToString(),
-                    dr["autoroLIvro"].ToString());
+                {
+                    leitor = new Leitor(Convert.ToInt32(dr["idLeitor"]),
+                    dr["nomeLeitor"].ToString(),
+                    dr["telefoneLeitor"].ToString(),
+                    dr["emailLeitor"].ToString(),
+                    dr["enderecoLeitor"].ToString()
+                    );
 
+                }
                 _conexao.Close();
-                return livro;
+                return leitor;
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-        */
         public void InsertLeitor(Leitor qualLeitor)
         {
             try

@@ -81,7 +81,7 @@ namespace apBiblioteca_22132_22148.DAL
                     livro = new Livro(Convert.ToInt32(dr["idLivro"]),
                     dr["codigoLivro"].ToString(),
                     dr["tituloLivro"].ToString(),
-                    dr["autoroLIvro"].ToString());
+                    dr["autorLIvro"].ToString());
 
                 }
                 _conexao.Close();
