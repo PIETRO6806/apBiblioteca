@@ -46,6 +46,21 @@ namespace apBiblioteca_22132_22148.UI
             }
         }
 
+        private void btnDevolver_Click(object sender, EventArgs e)
+        {
+            var emprestimo = new Emprestimo(Convert.ToInt32(txtIdEmprestimo.Text), 0, 0, DateTime.MinValue,
+                DateTime.MinValue, DateTime.MinValue);
+            try
+            {
+                var bll = new EmprestimoBLL(banco, usuario, senha);
+                bll.ExcluirEmprestimo(emprestimo);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(" Erro : " + ex.Message.ToString());
+            }
+        }
+
         private void btnNovo_Click(object sender, EventArgs e)
         {
             DateTime hoje = DateTime.Now.Date;
@@ -69,17 +84,17 @@ namespace apBiblioteca_22132_22148.UI
 
        private void btnRenovar_Click(object sender, EventArgs e)
         {
-            DateTime devPrevista = DateTime.Now.AddDays(14).Date;
-            DateTime hoje = DateTime.Now.Date;
-            txtDataDeEmprestimo.Text = hoje.ToString();
-            txtDataDeDevolucaoPrevista.Text = devPrevista.ToString();
+            DateTime novoDevPrevista = DateTime.Parse(txtDataDeEmprestimo.Text).AddDays(14).Date;
+            txtDataDeDevolucaoPrevista.Text = novoDevPrevista.ToString();
+
             var emprestimo = new Emprestimo(int.Parse(txtIdEmprestimo.Text),
-                int.Parse(txtIdLivro.Text), int.Parse(txtIdLeitor.Text),
-                hoje, devPrevista, devPrevista);
+                 int.Parse(txtIdLivro.Text), int.Parse(txtIdLeitor.Text),
+                 DateTime.Parse(txtDataDeEmprestimo.Text), novoDevPrevista, novoDevPrevista);
+
             try
             {
                 var bll = new EmprestimoBLL(banco, usuario, senha);
-                bll.RenovarEmprestimo(emprestimo);
+                bll.AlterarEmprestimo(emprestimo);
             }
             catch (Exception ex)
             {

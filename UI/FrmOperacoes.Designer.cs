@@ -31,24 +31,24 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dgvOperacoes = new System.Windows.Forms.DataGridView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.txtIdEmprestimo = new System.Windows.Forms.TextBox();
-            this.txtIdLivro = new System.Windows.Forms.TextBox();
-            this.txtIdLeitor = new System.Windows.Forms.TextBox();
-            this.txtDataDeEmprestimo = new System.Windows.Forms.TextBox();
-            this.txtDataDeDevolucaoPrevista = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnNovo = new System.Windows.Forms.Button();
-            this.btnRenovar = new System.Windows.Forms.Button();
-            this.btnExibir = new System.Windows.Forms.Button();
-            this.btnProcurar = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.btnDevolver = new System.Windows.Forms.Button();
+            this.btnProcurar = new System.Windows.Forms.Button();
+            this.btnExibir = new System.Windows.Forms.Button();
+            this.btnRenovar = new System.Windows.Forms.Button();
+            this.btnNovo = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtDataDeDevolucaoPrevista = new System.Windows.Forms.TextBox();
+            this.txtDataDeEmprestimo = new System.Windows.Forms.TextBox();
+            this.txtIdLeitor = new System.Windows.Forms.TextBox();
+            this.txtIdLivro = new System.Windows.Forms.TextBox();
+            this.txtIdEmprestimo = new System.Windows.Forms.TextBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOperacoes)).BeginInit();
             this.tabPage1.SuspendLayout();
@@ -103,124 +103,24 @@
             this.tabPage1.Text = "Empréstimo";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // txtIdEmprestimo
+            // btnDevolver
             // 
-            this.txtIdEmprestimo.Location = new System.Drawing.Point(166, 14);
-            this.txtIdEmprestimo.Name = "txtIdEmprestimo";
-            this.txtIdEmprestimo.Size = new System.Drawing.Size(100, 20);
-            this.txtIdEmprestimo.TabIndex = 0;
+            this.btnDevolver.Location = new System.Drawing.Point(233, 266);
+            this.btnDevolver.Name = "btnDevolver";
+            this.btnDevolver.Size = new System.Drawing.Size(75, 23);
+            this.btnDevolver.TabIndex = 16;
+            this.btnDevolver.Text = "Devolver";
+            this.btnDevolver.UseVisualStyleBackColor = true;
+            this.btnDevolver.Click += new System.EventHandler(this.btnDevolver_Click);
             // 
-            // txtIdLivro
+            // btnProcurar
             // 
-            this.txtIdLivro.Location = new System.Drawing.Point(166, 46);
-            this.txtIdLivro.Name = "txtIdLivro";
-            this.txtIdLivro.Size = new System.Drawing.Size(100, 20);
-            this.txtIdLivro.TabIndex = 1;
-            // 
-            // txtIdLeitor
-            // 
-            this.txtIdLeitor.Location = new System.Drawing.Point(166, 76);
-            this.txtIdLeitor.Name = "txtIdLeitor";
-            this.txtIdLeitor.Size = new System.Drawing.Size(100, 20);
-            this.txtIdLeitor.TabIndex = 2;
-            // 
-            // txtDataDeEmprestimo
-            // 
-            this.txtDataDeEmprestimo.Location = new System.Drawing.Point(166, 108);
-            this.txtDataDeEmprestimo.Name = "txtDataDeEmprestimo";
-            this.txtDataDeEmprestimo.ReadOnly = true;
-            this.txtDataDeEmprestimo.Size = new System.Drawing.Size(100, 20);
-            this.txtDataDeEmprestimo.TabIndex = 3;
-            // 
-            // txtDataDeDevolucaoPrevista
-            // 
-            this.txtDataDeDevolucaoPrevista.Location = new System.Drawing.Point(166, 145);
-            this.txtDataDeDevolucaoPrevista.Name = "txtDataDeDevolucaoPrevista";
-            this.txtDataDeDevolucaoPrevista.ReadOnly = true;
-            this.txtDataDeDevolucaoPrevista.Size = new System.Drawing.Size(100, 20);
-            this.txtDataDeDevolucaoPrevista.TabIndex = 4;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(166, 182);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Identificação:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 43);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Id do Livro:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 73);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Id do Leitor:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 105);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Data do Empréstimo:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 142);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(129, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Data Devolução Prevista:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 179);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(113, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Data Devolução Real:";
-            // 
-            // btnNovo
-            // 
-            this.btnNovo.Location = new System.Drawing.Point(20, 266);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(75, 23);
-            this.btnNovo.TabIndex = 12;
-            this.btnNovo.Text = "Novo";
-            this.btnNovo.UseVisualStyleBackColor = true;
-            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
-            // 
-            // btnRenovar
-            // 
-            this.btnRenovar.Location = new System.Drawing.Point(227, 266);
-            this.btnRenovar.Name = "btnRenovar";
-            this.btnRenovar.Size = new System.Drawing.Size(75, 23);
-            this.btnRenovar.TabIndex = 13;
-            this.btnRenovar.Text = "Renovar";
-            this.btnRenovar.UseVisualStyleBackColor = true;
-            this.btnRenovar.Click += new System.EventHandler(this.btnRenovar_Click);
+            this.btnProcurar.Location = new System.Drawing.Point(318, 12);
+            this.btnProcurar.Name = "btnProcurar";
+            this.btnProcurar.Size = new System.Drawing.Size(75, 23);
+            this.btnProcurar.TabIndex = 15;
+            this.btnProcurar.Text = "Procurar";
+            this.btnProcurar.UseVisualStyleBackColor = true;
             // 
             // btnExibir
             // 
@@ -232,14 +132,124 @@
             this.btnExibir.UseVisualStyleBackColor = true;
             this.btnExibir.Click += new System.EventHandler(this.btnExibir_Click);
             // 
-            // btnProcurar
+            // btnRenovar
             // 
-            this.btnProcurar.Location = new System.Drawing.Point(318, 12);
-            this.btnProcurar.Name = "btnProcurar";
-            this.btnProcurar.Size = new System.Drawing.Size(75, 23);
-            this.btnProcurar.TabIndex = 15;
-            this.btnProcurar.Text = "Procurar";
-            this.btnProcurar.UseVisualStyleBackColor = true;
+            this.btnRenovar.Location = new System.Drawing.Point(450, 266);
+            this.btnRenovar.Name = "btnRenovar";
+            this.btnRenovar.Size = new System.Drawing.Size(75, 23);
+            this.btnRenovar.TabIndex = 13;
+            this.btnRenovar.Text = "Renovar";
+            this.btnRenovar.UseVisualStyleBackColor = true;
+            this.btnRenovar.Click += new System.EventHandler(this.btnRenovar_Click);
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.Location = new System.Drawing.Point(20, 266);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(75, 23);
+            this.btnNovo.TabIndex = 12;
+            this.btnNovo.Text = "Novo";
+            this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(17, 179);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(113, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Data Devolução Real:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(17, 142);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(129, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Data Devolução Prevista:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(17, 105);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(105, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Data do Empréstimo:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(17, 73);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Id do Leitor:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(17, 43);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Id do Livro:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(17, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Identificação:";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(166, 182);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
+            this.textBox6.Size = new System.Drawing.Size(100, 20);
+            this.textBox6.TabIndex = 5;
+            // 
+            // txtDataDeDevolucaoPrevista
+            // 
+            this.txtDataDeDevolucaoPrevista.Location = new System.Drawing.Point(166, 145);
+            this.txtDataDeDevolucaoPrevista.Name = "txtDataDeDevolucaoPrevista";
+            this.txtDataDeDevolucaoPrevista.ReadOnly = true;
+            this.txtDataDeDevolucaoPrevista.Size = new System.Drawing.Size(100, 20);
+            this.txtDataDeDevolucaoPrevista.TabIndex = 4;
+            // 
+            // txtDataDeEmprestimo
+            // 
+            this.txtDataDeEmprestimo.Location = new System.Drawing.Point(166, 108);
+            this.txtDataDeEmprestimo.Name = "txtDataDeEmprestimo";
+            this.txtDataDeEmprestimo.ReadOnly = true;
+            this.txtDataDeEmprestimo.Size = new System.Drawing.Size(100, 20);
+            this.txtDataDeEmprestimo.TabIndex = 3;
+            // 
+            // txtIdLeitor
+            // 
+            this.txtIdLeitor.Location = new System.Drawing.Point(166, 76);
+            this.txtIdLeitor.Name = "txtIdLeitor";
+            this.txtIdLeitor.Size = new System.Drawing.Size(100, 20);
+            this.txtIdLeitor.TabIndex = 2;
+            // 
+            // txtIdLivro
+            // 
+            this.txtIdLivro.Location = new System.Drawing.Point(166, 46);
+            this.txtIdLivro.Name = "txtIdLivro";
+            this.txtIdLivro.Size = new System.Drawing.Size(100, 20);
+            this.txtIdLivro.TabIndex = 1;
+            // 
+            // txtIdEmprestimo
+            // 
+            this.txtIdEmprestimo.Location = new System.Drawing.Point(166, 14);
+            this.txtIdEmprestimo.Name = "txtIdEmprestimo";
+            this.txtIdEmprestimo.Size = new System.Drawing.Size(100, 20);
+            this.txtIdEmprestimo.TabIndex = 0;
             // 
             // tabControl1
             // 
@@ -251,15 +261,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(776, 426);
             this.tabControl1.TabIndex = 0;
-            // 
-            // btnDevolver
-            // 
-            this.btnDevolver.Location = new System.Drawing.Point(450, 266);
-            this.btnDevolver.Name = "btnDevolver";
-            this.btnDevolver.Size = new System.Drawing.Size(75, 23);
-            this.btnDevolver.TabIndex = 16;
-            this.btnDevolver.Text = "Devolver";
-            this.btnDevolver.UseVisualStyleBackColor = true;
             // 
             // FrmOperacoes
             // 

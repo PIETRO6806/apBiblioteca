@@ -56,19 +56,6 @@ namespace apBiblioteca_22132_22148.BLL
             }
         }
 
-        public void RenovarEmprestimo(Emprestimo emprestimo)
-        {
-            try
-            {
-                dal = new EmprestimoDAL(banco, usuario, senha);
-                dal.RenovarEmprestimo(emprestimo);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
         public void ExcluirEmprestimo(Emprestimo emprestimo)
         {
             try

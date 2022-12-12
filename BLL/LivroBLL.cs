@@ -60,8 +60,14 @@ namespace apBiblioteca_22132_22148.BLL
         {
             try
             {
-                dal = new LivroDAL(banco, usuario, senha);
-                dal.DeleteLivro(livro);
+                EmprestimoDAL dalEmprestimo = new EmprestimoDAL(banco, usuario, senha);
+                if (dal.SelectLivroById(livro.IdLivro) == null) //se não houver nenhum empréstimo com esse livro,
+                {                                               //pode-se excluí-lo
+                    dal = new LivroDAL(banco, usuario, senha);
+                    dal.DeleteLivro(livro);
+                }  
+
+
             }
             catch (Exception ex)
             {
