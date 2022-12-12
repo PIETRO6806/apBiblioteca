@@ -36,13 +36,11 @@
             this.btnExibir = new System.Windows.Forms.Button();
             this.btnRenovar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtDataDevolucaoReal = new System.Windows.Forms.TextBox();
             this.txtDataDeDevolucaoPrevista = new System.Windows.Forms.TextBox();
             this.txtDataDeEmprestimo = new System.Windows.Forms.TextBox();
             this.txtIdLeitor = new System.Windows.Forms.TextBox();
@@ -83,13 +81,11 @@
             this.tabPage1.Controls.Add(this.btnExibir);
             this.tabPage1.Controls.Add(this.btnRenovar);
             this.tabPage1.Controls.Add(this.btnNovo);
-            this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.txtDataDevolucaoReal);
             this.tabPage1.Controls.Add(this.txtDataDeDevolucaoPrevista);
             this.tabPage1.Controls.Add(this.txtDataDeEmprestimo);
             this.tabPage1.Controls.Add(this.txtIdLeitor);
@@ -121,6 +117,7 @@
             this.btnProcurar.TabIndex = 15;
             this.btnProcurar.Text = "Procurar";
             this.btnProcurar.UseVisualStyleBackColor = true;
+            this.btnProcurar.Click += new System.EventHandler(this.btnProcurar_Click);
             // 
             // btnExibir
             // 
@@ -151,15 +148,6 @@
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = true;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 179);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(113, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Data Devolução Real:";
             // 
             // label5
             // 
@@ -205,14 +193,6 @@
             this.label1.Size = new System.Drawing.Size(71, 13);
             this.label1.TabIndex = 6;
             this.label1.Text = "Identificação:";
-            // 
-            // txtDataDevolucaoReal
-            // 
-            this.txtDataDevolucaoReal.Location = new System.Drawing.Point(166, 182);
-            this.txtDataDevolucaoReal.Name = "txtDataDevolucaoReal";
-            this.txtDataDevolucaoReal.ReadOnly = true;
-            this.txtDataDevolucaoReal.Size = new System.Drawing.Size(100, 20);
-            this.txtDataDevolucaoReal.TabIndex = 5;
             // 
             // txtDataDeDevolucaoPrevista
             // 
@@ -289,13 +269,11 @@
         private System.Windows.Forms.Button btnExibir;
         private System.Windows.Forms.Button btnRenovar;
         private System.Windows.Forms.Button btnNovo;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtDataDevolucaoReal;
         private System.Windows.Forms.TextBox txtDataDeDevolucaoPrevista;
         private System.Windows.Forms.TextBox txtDataDeEmprestimo;
         private System.Windows.Forms.TextBox txtIdLeitor;

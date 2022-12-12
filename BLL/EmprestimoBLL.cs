@@ -48,6 +48,10 @@ namespace apBiblioteca_22132_22148.BLL
                 }
 
                 dal = new EmprestimoDAL(banco, usuario, senha);
+                if(dal.SelectCountEmprestimosByIdLeitor(emprestimo.IdLeitor) >= 5)
+                {
+                    throw new Exception("Não é possível emprestar mais livros para o Leitor, pois ele já tem 5 empréstimos pendentes!");
+                }
                 dal.InsertEmprestimo(emprestimo);
             }
             catch (Exception ex)

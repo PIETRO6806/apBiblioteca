@@ -73,7 +73,7 @@ namespace apBiblioteca_22132_22148.DAL
             {
                 string sql = "SELECT idEmprestimo,idLivro,idLeitor,dataEmprestimo," +
                         "dataDevolucaoPrevista, dataDevolucaoReal FROM bibEmprestimo" +
-                        "WHERE idEmprestimo = @id";
+                        " WHERE idEmprestimo = @id";
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
                 cmd.Parameters.AddWithValue("@id", idDesejado);
                 _conexao.Open();
@@ -136,7 +136,7 @@ namespace apBiblioteca_22132_22148.DAL
             {
                 string sql = "SELECT idEmprestimo,idLivro,idLeitor,dataEmprestimo," +
                         "dataDevolucaoPrevista, dataDevolucaoReal FROM bibEmprestimo" +
-                        "WHERE idLeitor = @id";
+                        " WHERE idLeitor = @id";
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
                 cmd.Parameters.AddWithValue("@id", idDesejado);
                 _conexao.Open();
@@ -234,6 +234,31 @@ namespace apBiblioteca_22132_22148.DAL
                 _conexao.Close();
             }
         }
+
+        public int SelectCountEmprestimosByIdLeitor(int idLeitor)
+        {
+            try
+            {
+                string sql = "SELECT COUNT(*) AS 'quantos' FROM bibEmprestimo WHERE idLeitor = @id";
+                SqlCommand cmd = new SqlCommand(sql, _conexao);
+                cmd.Parameters.AddWithValue("@id", idLeitor);
+                _conexao.Open();
+                SqlDataReader dr;
+                dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                int quantosEmprestimosByIdLeitor = 0;
+                if (dr.Read())
+                {
+                    quantosEmprestimosByIdLeitor = int.Parse(dr["quantos"].ToString());
+                }
+                _conexao.Close();
+                return quantosEmprestimosByIdLeitor;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }
 

@@ -61,6 +61,26 @@ namespace apBiblioteca_22132_22148.UI
             }
         }
 
+        private void btnProcurar_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(txtIdEmprestimo.Text);
+            var emprestimo = new Emprestimo(id, 0, 0, DateTime.MinValue, DateTime.MinValue, DateTime.MinValue);
+            try
+            {
+                var bll = new EmprestimoBLL(banco, usuario, senha);
+                emprestimo = bll.ListarEmprestimoPorId(id);
+                txtIdEmprestimo.Text = emprestimo.IdEmprestimo.ToString();
+                txtIdLivro.Text = emprestimo.IdLivro.ToString();
+                txtIdLeitor.Text = emprestimo.IdLeitor.ToString();
+                txtDataDeEmprestimo.Text = emprestimo.DataEmprestimo.ToString();
+                txtDataDeDevolucaoPrevista.Text = emprestimo.DataDevolucaoPrevista.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(" Erro : " + ex.Message.ToString());
+            }
+        }
+
         private void btnNovo_Click(object sender, EventArgs e)
         {
             DateTime hoje = DateTime.Now.Date;
@@ -68,7 +88,6 @@ namespace apBiblioteca_22132_22148.UI
 
             txtDataDeEmprestimo.Text = hoje.ToString();
             txtDataDeDevolucaoPrevista.Text = devPrevista.ToString();
-            //txtDataDevolucaoReal.Text = DateTime.MinValue.Date.ToString();
             var emprestimo = new Emprestimo(int.Parse(txtIdEmprestimo.Text),
                 int.Parse(txtIdLivro.Text), int.Parse(txtIdLeitor.Text),
                 hoje, devPrevista, devPrevista);
