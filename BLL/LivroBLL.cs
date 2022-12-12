@@ -65,8 +65,11 @@ namespace apBiblioteca_22132_22148.BLL
                 {                                               //pode-se excluí-lo
                     dal = new LivroDAL(banco, usuario, senha);
                     dal.DeleteLivro(livro);
-                }  
-
+                }
+                else
+                {
+                    throw new Exception("Não é possível excluir o livro, pois há empréstimos com ele.");
+                }
 
             }
             catch (Exception ex)
