@@ -72,7 +72,7 @@ namespace apBiblioteca_22132_22148.BLL
         {
             try
             {
-                dal = new DAL.EmprestimoDAL(banco, usuario, senha);
+                dal = new EmprestimoDAL(banco, usuario, senha);
                 dal.DeleteEmprestimo(emprestimo);
             }
             catch (Exception ex)

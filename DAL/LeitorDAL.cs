@@ -176,7 +176,7 @@ namespace apBiblioteca_22132_22148.DAL
                 string sql = "UPDATE bibLeitor " +
                 " SET nomeLeitor= @nome, telefoneLeitor=@tel," +
                 " emailLeitor=@email, enderecoLeitor=@ender " +
-                " WHERE idLivro = @id ";
+                " WHERE idLeitor = @id ";
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
                 cmd.Parameters.AddWithValue("@id", qualLeitor.IdLeitor);
                 cmd.Parameters.AddWithValue("@nome", qualLeitor.NomeLeitor);

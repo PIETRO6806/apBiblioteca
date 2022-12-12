@@ -104,7 +104,7 @@ namespace apBiblioteca_22132_22148.DAL
             {
                 string sql = "SELECT idEmprestimo,idLivro,idLeitor,dataEmprestimo," +
                         "dataDevolucaoPrevista, dataDevolucaoReal FROM bibEmprestimo" +
-                        "WHERE idLivro = @id";
+                        " WHERE idLivro = @id";
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
                 cmd.Parameters.AddWithValue("@id", idDesejado);
                 _conexao.Open();

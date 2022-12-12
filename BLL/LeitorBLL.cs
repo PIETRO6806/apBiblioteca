@@ -59,8 +59,13 @@ namespace apBiblioteca_22132_22148.BLL
         {
             try
             {
-                dal = new LeitorDAL(banco, usuario, senha);
-                dal.DeleteLeitor(leitor);
+                EmprestimoDAL dalEmprestimo = new EmprestimoDAL(banco, usuario, senha);
+                if (dalEmprestimo.SelectEmprestimoByIdLivro(leitor.IdLeitor) != null)
+                {
+                    throw new Exception("Não é possível excluir o Leitor, pois há emprestimos com ele!");
+                }
+                    dal = new LeitorDAL(banco, usuario, senha);
+                    dal.DeleteLeitor(leitor);
             }
             catch (Exception ex)
             {
