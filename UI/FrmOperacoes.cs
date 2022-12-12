@@ -73,9 +73,6 @@ namespace apBiblioteca_22132_22148.UI
             DateTime hoje = DateTime.Now.Date;
             txtDataDeEmprestimo.Text = hoje.ToString();
             txtDataDeDevolucaoPrevista.Text = devPrevista.ToString();
-
-
-
             var emprestimo = new Emprestimo(int.Parse(txtIdEmprestimo.Text),
                 int.Parse(txtIdLivro.Text), int.Parse(txtIdLeitor.Text),
                 hoje, devPrevista, devPrevista);

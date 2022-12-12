@@ -55,7 +55,7 @@ namespace apBiblioteca_22132_22148.UI
             }
         }
 
-        private void operaçõesToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void operaçõesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (txtBanco.Text == "" || txtUsuario.Text == "" || txtSenha.Text == "")
                 MessageBox.Show("Preencha os dados de conexão!");

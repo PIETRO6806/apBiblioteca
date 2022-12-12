@@ -198,13 +198,13 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(17, 179);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 13);
+            this.label6.Size = new System.Drawing.Size(113, 13);
             this.label6.TabIndex = 11;
-            this.label6.Text = "Data Devolução ";
+            this.label6.Text = "Data Devolução Real:";
             // 
             // btnNovo
             // 
-            this.btnNovo.Location = new System.Drawing.Point(321, 104);
+            this.btnNovo.Location = new System.Drawing.Point(20, 266);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(75, 23);
             this.btnNovo.TabIndex = 12;
@@ -214,7 +214,7 @@
             // 
             // btnRenovar
             // 
-            this.btnRenovar.Location = new System.Drawing.Point(347, 189);
+            this.btnRenovar.Location = new System.Drawing.Point(227, 266);
             this.btnRenovar.Name = "btnRenovar";
             this.btnRenovar.Size = new System.Drawing.Size(75, 23);
             this.btnRenovar.TabIndex = 13;
@@ -224,7 +224,7 @@
             // 
             // btnExibir
             // 
-            this.btnExibir.Location = new System.Drawing.Point(405, 266);
+            this.btnExibir.Location = new System.Drawing.Point(635, 266);
             this.btnExibir.Name = "btnExibir";
             this.btnExibir.Size = new System.Drawing.Size(75, 23);
             this.btnExibir.TabIndex = 14;
@@ -234,7 +234,7 @@
             // 
             // btnProcurar
             // 
-            this.btnProcurar.Location = new System.Drawing.Point(495, 108);
+            this.btnProcurar.Location = new System.Drawing.Point(318, 12);
             this.btnProcurar.Name = "btnProcurar";
             this.btnProcurar.Size = new System.Drawing.Size(75, 23);
             this.btnProcurar.TabIndex = 15;
@@ -254,7 +254,7 @@
             // 
             // btnDevolver
             // 
-            this.btnDevolver.Location = new System.Drawing.Point(536, 213);
+            this.btnDevolver.Location = new System.Drawing.Point(450, 266);
             this.btnDevolver.Name = "btnDevolver";
             this.btnDevolver.Size = new System.Drawing.Size(75, 23);
             this.btnDevolver.TabIndex = 16;
