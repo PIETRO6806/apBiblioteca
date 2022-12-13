@@ -403,9 +403,7 @@ namespace apBiblioteca_22132_22148.DAL
         {
             try
             {
-                string sql = "SELECT idEmprestimo,idLivro,idLeitor,dataEmprestimo," +
-                        "dataDevolucaoPrevista, dataDevolucaoReal FROM bibEmprestimo" +
-                        " WHERE idEmprestimo = @id";
+                string sql = "SELECT * FROM bibEmprestimo WHERE idEmprestimo = @id AND dataDevolucaoReal != '9999-12-31'";
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
                 cmd.Parameters.AddWithValue("@id", idDesejado);
                 _conexao.Open();
@@ -423,7 +421,7 @@ namespace apBiblioteca_22132_22148.DAL
 
                 }
                 _conexao.Close();
-                if(emprestimo.DataDevolucaoReal != DateTime.MaxValue)
+                if(emprestimo != null)
                     return true;
                 else
                     return false;

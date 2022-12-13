@@ -119,7 +119,7 @@ namespace apBiblioteca_22132_22148.UI
 
        private void btnRenovar_Click(object sender, EventArgs e)
         {
-            DateTime novoDevPrevista = DateTime.Parse(txtDataDeEmprestimo.Text).AddDays(14).Date;
+            DateTime novoDevPrevista = DateTime.Parse(txtDataDeDevolucaoPrevista.Text).AddDays(14).Date;
             txtDataDeDevolucaoPrevista.Text = novoDevPrevista.ToString();
 
             var emprestimo = new Emprestimo(int.Parse(txtIdEmprestimo.Text),
