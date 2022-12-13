@@ -192,5 +192,31 @@ namespace apBiblioteca_22132_22148.BLL
             }
         }
 
+        public int QuantasDevolucoes()
+        {
+            try
+            {
+                dal = new EmprestimoDAL(banco, usuario, senha);
+                return dal.SelectCountDevolucoes();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Boolean EhDevolucao(int id)
+        {
+            try
+            {
+                dal = new EmprestimoDAL(banco, usuario, senha);
+                return dal.EhDevolucao(id);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

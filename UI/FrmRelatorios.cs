@@ -32,6 +32,7 @@ namespace apBiblioteca_22132_22148.UI
             lbQtosLeitores.Text = leitorBLL.QuantosLeitores().ToString();
             lbLivroMaiorDemanda.Text = livroBLL.ListarLivroPorId(emprestimoBLL.SelectLivroComMaiorDemanda()).TituloLivro;
             lbQtosLeitoresComPendencias.Text = emprestimoBLL.QuantosLeitoresComEmprestimos().ToString();
+            lbQtosLivrosDevolvidos.Text = emprestimoBLL.QuantasDevolucoes().ToString();
         }
     }
 }

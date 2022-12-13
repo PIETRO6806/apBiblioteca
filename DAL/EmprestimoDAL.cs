@@ -263,7 +263,7 @@ namespace apBiblioteca_22132_22148.DAL
         {
             try
             {
-                string sql = "SELECT COUNT(*) AS 'quantos' FROM bibEmprestimo WHERE idLeitor = @id";
+                string sql = "SELECT COUNT(*) AS 'quantos' FROM bibEmprestimo WHERE idLeitor = @id AND dataDevolucaoReal = '9999-12-31'";
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
                 cmd.Parameters.AddWithValue("@id", idLeitor);
                 _conexao.Open();
@@ -287,7 +287,7 @@ namespace apBiblioteca_22132_22148.DAL
         {
             try
             {
-                string sql = "SELECT COUNT(*) AS 'quantos' FROM bibEmprestimo WHERE idLivro = @id";
+                string sql = "SELECT COUNT(*) AS 'quantos' FROM bibEmprestimo WHERE idLivro = @id AND dataDevolucaoReal = '9999-12-31'";
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
                 cmd.Parameters.AddWithValue("@id", idLivro);
                 _conexao.Open();
@@ -311,7 +311,7 @@ namespace apBiblioteca_22132_22148.DAL
         {
             try
             {
-                string sql = "SELECT COUNT(*) AS 'quantos' FROM bibEmprestimo";
+                string sql = "SELECT COUNT(*) AS 'quantos' FROM bibEmprestimo WHERE dataDevolucaoReal = '9999-12-31'";
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
                 _conexao.Open();
                 SqlDataReader dr;
@@ -334,7 +334,7 @@ namespace apBiblioteca_22132_22148.DAL
         {
             try
             {
-                string sql = "SELECT COUNT(DISTINCT idLeitor) AS 'quantos' FROM bibEmprestimo";
+                string sql = "SELECT COUNT(DISTINCT idLeitor) AS 'quantos' FROM bibEmprestimo WHERE dataDevolucaoReal = '9999-12-31'";
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
                 _conexao.Open();
                 SqlDataReader dr;
@@ -357,7 +357,7 @@ namespace apBiblioteca_22132_22148.DAL
         {
             try
             {
-                string sql = "SELECT TOP 1 idLivro  FROM bibEmprestimo GROUP BY IdLivro ORDER BY COUNT(idLivro) DESC";
+                string sql = "SELECT TOP 1 idLivro  FROM bibEmprestimo WHERE dataDevolucaoReal = '9999-12-31' GROUP BY IdLivro ORDER BY COUNT(idLivro) DESC";
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
                 _conexao.Open();
                 SqlDataReader dr;
@@ -369,6 +369,64 @@ namespace apBiblioteca_22132_22148.DAL
                 }
                 _conexao.Close();
                 return quantosEmprestimos;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public int SelectCountDevolucoes()
+        {
+            try
+            {
+                string sql = "SELECT COUNT(*) AS 'quantos' FROM bibEmprestimo WHERE dataDevolucaoReal != '9999-12-31'";
+                SqlCommand cmd = new SqlCommand(sql, _conexao);
+                _conexao.Open();
+                SqlDataReader dr;
+                dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                int quantasDevolucoes = 0;
+                if (dr.Read())
+                {
+                    quantasDevolucoes = int.Parse(dr["quantos"].ToString());
+                }
+                _conexao.Close();
+                return quantasDevolucoes;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Boolean EhDevolucao (int idDesejado)
+        {
+            try
+            {
+                string sql = "SELECT idEmprestimo,idLivro,idLeitor,dataEmprestimo," +
+                        "dataDevolucaoPrevista, dataDevolucaoReal FROM bibEmprestimo" +
+                        " WHERE idEmprestimo = @id";
+                SqlCommand cmd = new SqlCommand(sql, _conexao);
+                cmd.Parameters.AddWithValue("@id", idDesejado);
+                _conexao.Open();
+                SqlDataReader dr;
+                dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                Emprestimo emprestimo = null;
+                if (dr.Read())
+                {
+                    emprestimo = new Emprestimo(Convert.ToInt32(dr["idEmprestimo"]),
+                    Convert.ToInt32(dr["idLivro"].ToString()),
+                    Convert.ToInt32(dr["idLeitor"].ToString()),
+                    Convert.ToDateTime(dr["dataEmprestimo"].ToString()),
+                    Convert.ToDateTime(dr["dataDevolucaoPrevista"].ToString()),
+                    Convert.ToDateTime(dr["dataDevolucaoReal"].ToString()));
+
+                }
+                _conexao.Close();
+                if(emprestimo.DataDevolucaoReal != DateTime.MaxValue)
+                    return true;
+                else
+                    return false;
             }
             catch (Exception ex)
             {

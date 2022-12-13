@@ -77,6 +77,10 @@ namespace apBiblioteca_22132_22148.UI
             try
             {
                 var bll = new EmprestimoBLL(banco, usuario, senha);
+                if(bll.EhDevolucao(id) == true)
+                {
+                    throw new Exception("Este empréstimo já foi devolvido, tente outro.");
+                }
                 emprestimo = bll.ListarEmprestimoPorId(id);
                 txtIdEmprestimo.Text = emprestimo.IdEmprestimo.ToString();
                 txtIdLivro.Text = emprestimo.IdLivro.ToString();

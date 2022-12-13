@@ -38,6 +38,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lbLivroMaiorDemanda = new System.Windows.Forms.Label();
             this.lbQtosLeitoresComPendencias = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbQtosLivrosDevolvidos = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbQtosLeitores
@@ -130,12 +132,32 @@
             this.lbQtosLeitoresComPendencias.TabIndex = 16;
             this.lbQtosLeitoresComPendencias.Text = "label8";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(78, 219);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(160, 13);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Quantos livros foram devolvidos:";
+            // 
+            // lbQtosLivrosDevolvidos
+            // 
+            this.lbQtosLivrosDevolvidos.AutoSize = true;
+            this.lbQtosLivrosDevolvidos.Location = new System.Drawing.Point(279, 219);
+            this.lbQtosLivrosDevolvidos.Name = "lbQtosLivrosDevolvidos";
+            this.lbQtosLivrosDevolvidos.Size = new System.Drawing.Size(35, 13);
+            this.lbQtosLivrosDevolvidos.TabIndex = 18;
+            this.lbQtosLivrosDevolvidos.Text = "label9";
+            // 
             // FrmRelatorios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbQtosLivrosDevolvidos);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.lbQtosLeitoresComPendencias);
             this.Controls.Add(this.lbLivroMaiorDemanda);
             this.Controls.Add(this.label6);
@@ -146,7 +168,6 @@
             this.Controls.Add(this.lbQtosLivros);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Name = "FrmRelatorios";
             this.Text = "Relatórios da Biblioteca";
             this.ResumeLayout(false);
@@ -166,5 +187,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lbLivroMaiorDemanda;
         private System.Windows.Forms.Label lbQtosLeitoresComPendencias;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbQtosLivrosDevolvidos;
     }
 }
