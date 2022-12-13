@@ -51,7 +51,7 @@ namespace apBiblioteca_22132_22148.DAL
                 try
                 {
                     string sql = "SELECT idEmprestimo,idLivro,idLeitor,dataEmprestimo," +
-                        "dataDevolucaoPrevista, dataDevolucaoReal FROM bibEmprestimo";
+                        "dataDevolucaoPrevista FROM bibEmprestimo WHERE dataDevolucaoReal = '9999-12-31'"; //valor do DateTime.MaxValue, quer dizer que ainda não foi devolvido
                     SqlCommand cmd = new SqlCommand(sql, _conexao);
                     _conexao.Open();
                     SqlDataAdapter da = new SqlDataAdapter();
@@ -68,13 +68,13 @@ namespace apBiblioteca_22132_22148.DAL
             }
         }
 
-        /*public DataTable SelectDevolucoes()
+        public DataTable SelectDevolucoes()
         {
             {
                 try
                 {
                     string sql = "SELECT idEmprestimo,idLivro,idLeitor,dataEmprestimo," +
-                        "dataDevolucaoPrevista, dataDevolucaoReal FROM bibEmprestimo WHERE dataDevolucaoReal != null";
+                        "dataDevolucaoPrevista, dataDevolucaoReal FROM bibEmprestimo WHERE dataDevolucaoReal != '9999-12-31'";
                     SqlCommand cmd = new SqlCommand(sql, _conexao);
                     _conexao.Open();
                     SqlDataAdapter da = new SqlDataAdapter();
@@ -89,7 +89,7 @@ namespace apBiblioteca_22132_22148.DAL
                     throw ex;
                 }
             }
-        }*/
+        }
 
         public Emprestimo SelectEmprestimoById(int idDesejado)
         {
@@ -235,7 +235,7 @@ namespace apBiblioteca_22132_22148.DAL
             try
             {
                 string sql = "UPDATE bibEmprestimo " +
-                " SET idLivro= @livro, idLeitor=@leitor," +
+                " SET idLivro= @idLivro, idLeitor=@idLeitor," +
                 " dataEmprestimo=@data, dataDevolucaoPrevista=@dataDevolucaoPrevista," +
                 "dataDevolucaoReal=@dataDevolucaoReal" +
                 " WHERE idEmprestimo = @idEmprestimo ";

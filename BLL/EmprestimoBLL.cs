@@ -31,6 +31,24 @@ namespace apBiblioteca_22132_22148.BLL
                 return tb;
             }
         }
+
+        public DataTable SelecionarDevolucoes()
+        {
+            {
+                DataTable tb = new DataTable();
+                try
+                {
+                    dal = new EmprestimoDAL(banco, usuario, senha);
+                    tb = dal.SelectDevolucoes();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                return tb;
+            }
+        }
+
         public void IncluirEmprestimo(Emprestimo emprestimo)
         {
             try

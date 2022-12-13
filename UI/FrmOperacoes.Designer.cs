@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dgvOperacoes = new System.Windows.Forms.DataGridView();
+            this.dgvEmprestimos = new System.Windows.Forms.DataGridView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnDevolver = new System.Windows.Forms.Button();
             this.btnProcurar = new System.Windows.Forms.Button();
@@ -47,32 +47,36 @@
             this.txtIdLivro = new System.Windows.Forms.TextBox();
             this.txtIdEmprestimo = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dgvDevolucoes = new System.Windows.Forms.DataGridView();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOperacoes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmprestimos)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDevolucoes)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.tabPage3.Controls.Add(this.dgvOperacoes);
+            this.tabPage3.Controls.Add(this.dgvEmprestimos);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(768, 400);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Lista";
+            this.tabPage3.Text = "Empréstimos";
             // 
-            // dgvOperacoes
+            // dgvEmprestimos
             // 
-            this.dgvOperacoes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvOperacoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOperacoes.Location = new System.Drawing.Point(6, 6);
-            this.dgvOperacoes.Name = "dgvOperacoes";
-            this.dgvOperacoes.ReadOnly = true;
-            this.dgvOperacoes.Size = new System.Drawing.Size(756, 391);
-            this.dgvOperacoes.TabIndex = 0;
+            this.dgvEmprestimos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvEmprestimos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmprestimos.Location = new System.Drawing.Point(6, 6);
+            this.dgvEmprestimos.Name = "dgvEmprestimos";
+            this.dgvEmprestimos.ReadOnly = true;
+            this.dgvEmprestimos.Size = new System.Drawing.Size(756, 391);
+            this.dgvEmprestimos.TabIndex = 0;
             // 
             // tabPage1
             // 
@@ -97,7 +101,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(768, 400);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Empréstimo";
+            this.tabPage1.Text = "Operações";
             // 
             // btnDevolver
             // 
@@ -236,11 +240,31 @@
             this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(776, 426);
             this.tabControl1.TabIndex = 0;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.tabPage2.Controls.Add(this.dgvDevolucoes);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(768, 400);
+            this.tabPage2.TabIndex = 3;
+            this.tabPage2.Text = "Devoluções";
+            // 
+            // dgvDevolucoes
+            // 
+            this.dgvDevolucoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDevolucoes.Location = new System.Drawing.Point(6, 6);
+            this.dgvDevolucoes.Name = "dgvDevolucoes";
+            this.dgvDevolucoes.Size = new System.Drawing.Size(756, 388);
+            this.dgvDevolucoes.TabIndex = 0;
             // 
             // FrmOperacoes
             // 
@@ -249,12 +273,14 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControl1);
             this.Name = "FrmOperacoes";
-            this.Text = "Operações";
+            this.Text = "Empréstimo e Devolução de Livros";
             this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOperacoes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmprestimos)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDevolucoes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -262,7 +288,7 @@
         #endregion
 
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.DataGridView dgvOperacoes;
+        private System.Windows.Forms.DataGridView dgvEmprestimos;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button btnDevolver;
         private System.Windows.Forms.Button btnProcurar;
@@ -280,5 +306,7 @@
         private System.Windows.Forms.TextBox txtIdLivro;
         private System.Windows.Forms.TextBox txtIdEmprestimo;
         private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataGridView dgvDevolucoes;
     }
 }

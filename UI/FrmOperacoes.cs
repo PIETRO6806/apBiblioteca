@@ -30,13 +30,20 @@ namespace apBiblioteca_22132_22148.UI
             try
             {
                 var bll = new EmprestimoBLL(banco, usuario, senha);
-                dgvOperacoes.DataSource = bll.SelecionarEmprestimos();
-                dgvOperacoes.Columns[0].HeaderText = "Identificação";
-                dgvOperacoes.Columns[1].HeaderText = "Id Livro";
-                dgvOperacoes.Columns[2].HeaderText = "Id Leitor";
-                dgvOperacoes.Columns[3].HeaderText = "Data Empréstimo";
-                dgvOperacoes.Columns[4].HeaderText = "Data Devolução Prevista";
-               // dgvOperacoes.Columns[5].HeaderText = "Data Devolução Real";
+                dgvEmprestimos.DataSource = bll.SelecionarEmprestimos();
+                dgvEmprestimos.Columns[0].HeaderText = "Identificação";
+                dgvEmprestimos.Columns[1].HeaderText = "Id Livro";                  //preenche o dgvEmprestimos
+                dgvEmprestimos.Columns[2].HeaderText = "Id Leitor";
+                dgvEmprestimos.Columns[3].HeaderText = "Data Empréstimo";
+                dgvEmprestimos.Columns[4].HeaderText = "Data Devolução Prevista";
+
+                dgvDevolucoes.DataSource = bll.SelecionarDevolucoes();
+                dgvDevolucoes.Columns[0].HeaderText = "Identificação";
+                dgvDevolucoes.Columns[1].HeaderText = "Id Livro";
+                dgvDevolucoes.Columns[2].HeaderText = "Id Leitor";                  //preenche o dgvDevolucoes
+                dgvDevolucoes.Columns[3].HeaderText = "Data Empréstimo";
+                dgvDevolucoes.Columns[4].HeaderText = "Data Devolução Prevista";
+                dgvDevolucoes.Columns[5].HeaderText = "Data Devolução Real";
 
 
             }
@@ -48,12 +55,14 @@ namespace apBiblioteca_22132_22148.UI
 
         private void btnDevolver_Click(object sender, EventArgs e)
         {
-            var emprestimo = new Emprestimo(Convert.ToInt32(txtIdEmprestimo.Text), 0, 0, DateTime.MinValue,
-                DateTime.MinValue, DateTime.MinValue);
+            DateTime hoje = DateTime.Now.Date;
+            var emprestimo = new Emprestimo(int.Parse(txtIdEmprestimo.Text),
+                 int.Parse(txtIdLivro.Text), int.Parse(txtIdLeitor.Text),
+                 DateTime.Parse(txtDataDeEmprestimo.Text), DateTime.Parse(txtDataDeDevolucaoPrevista.Text), hoje);
             try
             {
                 var bll = new EmprestimoBLL(banco, usuario, senha);
-                bll.ExcluirEmprestimo(emprestimo);
+                bll.AlterarEmprestimo(emprestimo);
             }
             catch (Exception ex)
             {
@@ -92,7 +101,7 @@ namespace apBiblioteca_22132_22148.UI
             txtDataDeDevolucaoPrevista.Text = devPrevista.ToString();
             var emprestimo = new Emprestimo(int.Parse(txtIdEmprestimo.Text),
                 int.Parse(txtIdLivro.Text), int.Parse(txtIdLeitor.Text),
-                hoje, devPrevista, devPrevista);
+                hoje, devPrevista, DateTime.MaxValue); //maxValue para diferenciar os emprestimos das devolucoes
             try
             {
                 var bll = new EmprestimoBLL(banco, usuario, senha);
@@ -111,7 +120,7 @@ namespace apBiblioteca_22132_22148.UI
 
             var emprestimo = new Emprestimo(int.Parse(txtIdEmprestimo.Text),
                  int.Parse(txtIdLivro.Text), int.Parse(txtIdLeitor.Text),
-                 DateTime.Parse(txtDataDeEmprestimo.Text), novoDevPrevista, novoDevPrevista);
+                 DateTime.Parse(txtDataDeEmprestimo.Text), novoDevPrevista, DateTime.MaxValue);
 
             try
             {
